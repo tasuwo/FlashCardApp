@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="FlashCardPlayViewController" customModule="FlashCard" customModuleProvider="target">
+            <connections>
+                <outlet property="flashCardPlayView" destination="Hz6-mo-xeY" id="zpk-ek-9i5"/>
+                <outlet property="nowCardFront" destination="g0O-hd-9qC" id="rtp-A5-rfn"/>
+                <outlet property="previousCardBack" destination="ABb-wf-xHE" id="Qh3-W8-5vI"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="OF9-AE-Mpk"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="388" height="323"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLY-ZW-iJx">
+                    <rect key="frame" x="17" y="20" width="354" height="133"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" drawsBackground="YES" id="g0O-hd-9qC" customClass="NSCustomTextFieldCell" customModule="FlashCard" customModuleProvider="target">
+                        <font key="font" size="30" name="Monaco"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MJ-64-6Qj">
+                    <rect key="frame" x="17" y="170" width="354" height="133"/>
+                    <textFieldCell key="cell" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Label" drawsBackground="YES" id="ABb-wf-xHE">
+                        <font key="font" size="15" name="Monaco"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="151" y="641.5"/>
+        </customView>
+    </objects>
+</document>
