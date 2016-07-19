@@ -1,11 +1,10 @@
 //
 //  RegistCardViewController.swift
-//  flush-card
+//  FlashCard
 //
 //  Created by tasuku tozawa on 2016/07/05.
 //  Copyright © 2016年 tasuwo. All rights reserved.
 //
-// [SwiftでNSNotificationを利用してクラス間の処理を連携する - Qiita](http://qiita.com/taka000826/items/2460869a01766fdd221a
 
 import Cocoa
 import RealmSwift

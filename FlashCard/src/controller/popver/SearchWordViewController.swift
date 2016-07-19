@@ -1,13 +1,10 @@
 //
 //  SearchWordViewController.swift
-//  flush-card
+//  FlashCard
 //
 //  Created by tasuku tozawa on 2016/07/02.
 //  Copyright © 2016年 tasuwo. All rights reserved.
 //
-// [OS X を自分色に染める w/ defaults - Qiita](http://qiita.com/ry0f/items/f2c75f0a77b1012182d6)
-// [Swiftでシステム内蔵辞書を検索する方法 - Qiita](http://qiita.com/doraTeX/items/9b290f4e39f1e100558b)
-// http://stackoverflow.com/questions/24046164/how-do-i-get-a-reference-to-the-app-delegate-in-swift
 
 import Cocoa
 import RealmSwift

@@ -1,6 +1,6 @@
 //
 //  EditCardView.swift
-//  flush-card
+//  FlashCard
 //
 //  Created by tasuku tozawa on 2016/07/08.
 //  Copyright © 2016年 tasuwo. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  MASShortcut-Bridging-Header.h
-//  flush-card
+//  FlashCard
 //
 //  Created by tasuku tozawa on 2016/07/07.
 //  Copyright © 2016年 tasuwo. All rights reserved.

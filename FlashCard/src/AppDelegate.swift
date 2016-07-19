@@ -1,11 +1,10 @@
 //
 //  AppDelegate.swift
-//  flush-card
+//  FlashCard
 //
 //  Created by tasuku tozawa on 2016/07/02.
 //  Copyright © 2016年 tasuwo. All rights reserved.
 //
-// http://genjiapp.com/blog/2012/10/25/how-to-develop-a-preferences-window-for-os-x-app.html
 
 import Cocoa
 import RealmSwift

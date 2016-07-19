@@ -1,12 +1,10 @@
 //
 //  PopverOnStatusBar.swift
-//  flush-card
+//  FlashCard
 //
 //  Created by tasuku tozawa on 2016/07/05.
 //  Copyright © 2016年 tasuwo. All rights reserved.
 //
-// [sender: AnyObject?](https://www.raywenderlich.com/98178/os-x-tutorial-menus-popovers-menu-bar-apps)
-// [http://qiita.com/eielh/items/83dfd775558bd5a4bb25](https://teratail.com/questions/16588)
 
 import Foundation
 

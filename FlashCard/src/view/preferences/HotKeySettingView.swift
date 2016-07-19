@@ -1,11 +1,10 @@
 //
 //  SettingsViewController.swift
-//  flush-card
+//  FlashCard
 //
 //  Created by tasuku tozawa on 2016/07/04.
 //  Copyright © 2016年 tasuwo. All rights reserved.
 //
-// [CocoaDocs.org - MASShortcutBinder Class Reference](http://cocoadocs.org/docsets/MASShortcut/2.3.3/Classes/MASShortcutBinder.html#//api/name/registerDefaultShortcuts:)
 
 import Cocoa
 
