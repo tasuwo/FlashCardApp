@@ -7,13 +7,14 @@
 //
 
 import Cocoa
+import WebKit
 import RealmSwift
 
 class RegistCardViewController: NSViewController {
     @IBOutlet var registCardView: NSView!
-    @IBOutlet var dictionaryContentsField: NSTextView!
     @IBOutlet weak var frontTextField: NSTextField!
     @IBOutlet weak var backTextField: NSTextField!
+    @IBOutlet weak var dictionaryContentsField: WebView!
 
     override private init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -59,9 +60,9 @@ class RegistCardViewController: NSViewController {
         // 辞書内容をセット
         let wisdomPath = "/Library/Dictionaries/Sanseido The WISDOM English-Japanese Japanese-English Dictionary.dictionary"
         if let result = DictionaryServiceManager().lookUp(self.word, inDictionary: wisdomPath) {
-            self.dictionaryContentsField.string = result
+            self.dictionaryContentsField.mainFrame.loadHTMLString(result, baseURL: nil)
         } else {
-            self.dictionaryContentsField.string = "No result"
+            self.dictionaryContentsField.mainFrame.loadHTMLString("No result", baseURL: nil)
         }
     }
 

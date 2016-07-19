@@ -7,13 +7,14 @@
 //
 
 import Cocoa
+import WebKit
 import RealmSwift
 
 class SearchWordViewController: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet weak var inputWordField: NSTextField!
-    @IBOutlet var dictionaryContentsField: NSTextView!
     @IBOutlet weak var settingsButton: NSButton!
+    @IBOutlet weak var dictionaryContentsField: WebView!
 
     override private init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -81,9 +82,10 @@ class SearchWordViewController: NSViewController, NSTextFieldDelegate {
         let word: String = inputWordField.stringValue
 
         if let result = DictionaryServiceManager().lookUp(word, inDictionary: wisdomPath) {
-            self.dictionaryContentsField.string = result
+            // TODO: result を HTML にパースする何か
+            self.dictionaryContentsField.mainFrame.loadHTMLString(result, baseURL: nil)
         } else {
-            dictionaryContentsField.string = "No result"
+            self.dictionaryContentsField.mainFrame.loadHTMLString("No result", baseURL: nil)
         }
     }
 }
