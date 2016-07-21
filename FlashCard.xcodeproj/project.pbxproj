@@ -19,7 +19,7 @@
 		2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C16875F1D2B96D9000B12B1 /* DataModels.swift */; };
 		2C1687631D2B9DC9000B12B1 /* PopverOnStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */; };
 		2C1687661D2BAFB0000B12B1 /* RegistCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */; };
-		2C1687671D2BAFB0000B12B1 /* RegistCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1687651D2BAFB0000B12B1 /* RegistCardViewController.xib */; };
+		2C1687671D2BAFB0000B12B1 /* RegistCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */; };
 		2C1687951D2BF47B000B12B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1687931D2BF47B000B12B1 /* MainMenu.xib */; };
 		2C2864ED1D3BA81E0084E405 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2864EC1D3BA81E0084E405 /* SettingViewController.swift */; };
 		2C497F431D2C288000E4D2DE /* HotKeySettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C497F421D2C288000E4D2DE /* HotKeySettingView.xib */; };
@@ -36,6 +36,8 @@
 		2C9CFF301D2F81C800F40888 /* EditCardWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CFF2F1D2F81C800F40888 /* EditCardWindow.swift */; };
 		2CE6D8271D4055AE00A3BAD6 /* SearchWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */; };
 		2CE6D82B1D405A9A00A3BAD6 /* SearchWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */; };
+		2CE6D82D1D40634100A3BAD6 /* RegistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */; };
+		2CE6D82F1D40654400A3BAD6 /* RegistCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82E1D40654400A3BAD6 /* RegistCardModel.swift */; };
 		DF796C5710EE696D97377FA5 /* libPods-FlashCard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 941C6D5E0BDD7AF641BFBB39 /* libPods-FlashCard.a */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +55,7 @@
 		2C16875F1D2B96D9000B12B1 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopverOnStatusBar.swift; sourceTree = "<group>"; };
 		2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCardViewController.swift; sourceTree = "<group>"; };
-		2C1687651D2BAFB0000B12B1 /* RegistCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistCardViewController.xib; sourceTree = "<group>"; };
+		2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistCardView.xib; sourceTree = "<group>"; };
 		2C1687941D2BF47B000B12B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2C2864EC1D3BA81E0084E405 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2C497F421D2C288000E4D2DE /* HotKeySettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotKeySettingView.xib; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		2CD301671D2D581E0018FA62 /* MASShortcut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASShortcut-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordView.swift; sourceTree = "<group>"; };
 		2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordModel.swift; sourceTree = "<group>"; };
+		2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCardView.swift; sourceTree = "<group>"; };
+		2CE6D82E1D40654400A3BAD6 /* RegistCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCardModel.swift; sourceTree = "<group>"; };
 		430D39F43AE14F375B155AB9 /* Pods-FlashCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCard/Pods-FlashCard.release.xcconfig"; sourceTree = "<group>"; };
 		49BB7EB6A0EA8F61F48BFBF5 /* Pods-FlashCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCard/Pods-FlashCard.debug.xcconfig"; sourceTree = "<group>"; };
 		941C6D5E0BDD7AF641BFBB39 /* libPods-FlashCard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlashCard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,7 @@
 				2C0201691D2A5C74006B307A /* DataModel */,
 				2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */,
 				2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */,
+				2CE6D82E1D40654400A3BAD6 /* RegistCardModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -159,9 +164,10 @@
 			children = (
 				2C0667141D2D0CCE007F58FC /* FlashCardPlayView.xib */,
 				2C60C44E1D27CA19009C1CD3 /* SearchWordView.xib */,
-				2C1687651D2BAFB0000B12B1 /* RegistCardViewController.xib */,
+				2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */,
 				2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */,
 				2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */,
+				2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */,
 			);
 			path = popver;
 			sourceTree = "<group>";
@@ -329,7 +335,7 @@
 				2C9CFF2E1D2F7FF000F40888 /* EditCardWindow.xib in Resources */,
 				2C60C4501D27CA19009C1CD3 /* SearchWordView.xib in Resources */,
 				2C1687951D2BF47B000B12B1 /* MainMenu.xib in Resources */,
-				2C1687671D2BAFB0000B12B1 /* RegistCardViewController.xib in Resources */,
+				2C1687671D2BAFB0000B12B1 /* RegistCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +418,9 @@
 				2C1687631D2B9DC9000B12B1 /* PopverOnStatusBar.swift in Sources */,
 				2C02015C1D296DB6006B307A /* HotKeySettingView.swift in Sources */,
 				2C0201641D2A35D0006B307A /* DictionaryManager.swift in Sources */,
+				2CE6D82F1D40654400A3BAD6 /* RegistCardModel.swift in Sources */,
 				2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */,
+				2CE6D82D1D40634100A3BAD6 /* RegistCardView.swift in Sources */,
 				2C497F471D2C307C00E4D2DE /* FlashCardsManagerView.swift in Sources */,
 				2C14889A1D3F6B0E007A8BBD /* FlashCardPlayView.swift in Sources */,
 				2CE6D8271D4055AE00A3BAD6 /* SearchWordView.swift in Sources */,

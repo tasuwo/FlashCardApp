@@ -5,13 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="RegistCardViewController" customModule="FlashCard" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="RegistCardView" customModule="FlashCard" customModuleProvider="target">
             <connections>
-                <outlet property="backTextField" destination="9qy-Dh-s9Y" id="TnZ-BF-mOc"/>
-                <outlet property="dictionaryContentsField" destination="KBF-2B-x74" id="XxN-pV-adP"/>
-                <outlet property="frontTextField" destination="Kju-1v-aCI" id="aRk-OG-1gS"/>
-                <outlet property="registCardView" destination="Hz6-mo-xeY" id="T7V-p7-XEr"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="backTextField" destination="9qy-Dh-s9Y" id="95A-ak-t9b"/>
+                <outlet property="dictionaryContentsField" destination="KBF-2B-x74" id="uDc-Il-l22"/>
+                <outlet property="frontTextField" destination="Kju-1v-aCI" id="GEo-lz-0In"/>
+                <outlet property="registCardView" destination="Hz6-mo-xeY" id="RN1-fT-eg3"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -52,7 +51,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="didPressEnterInBackTextField:" target="-2" id="ANS-qW-c4d"/>
+                        <action selector="didPressEnterInBackTextField:" target="-2" id="2eT-Ly-hA6"/>
                     </connections>
                 </textField>
                 <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K89-LM-N49">

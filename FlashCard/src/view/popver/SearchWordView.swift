@@ -28,8 +28,7 @@ class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
     
     @IBAction func didPressEnterButtonInInputTextField (sender: AnyObject) {
         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-        let vc = RegistCardViewController()
-        vc.setFrontText(self.inputWordField.stringValue)
+        let vc = RegistCardViewController(searchedWord: self.inputWordField.stringValue)
         appDelegate.setViewControllerToPopover(vc)
     }
     
