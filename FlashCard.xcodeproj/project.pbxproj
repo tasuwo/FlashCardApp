@@ -13,7 +13,9 @@
 		2C02017A1D2B9277006B307A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0201791D2B9277006B307A /* Realm.framework */; };
 		2C02017C1D2B9287006B307A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C02017B1D2B9287006B307A /* RealmSwift.framework */; };
 		2C0667151D2D0CCE007F58FC /* FlashCardPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0667131D2D0CCE007F58FC /* FlashCardPlayViewController.swift */; };
-		2C0667161D2D0CCE007F58FC /* FlashCardPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0667141D2D0CCE007F58FC /* FlashCardPlayViewController.xib */; };
+		2C0667161D2D0CCE007F58FC /* FlashCardPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0667141D2D0CCE007F58FC /* FlashCardPlayView.xib */; };
+		2C14889A1D3F6B0E007A8BBD /* FlashCardPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */; };
+		2C14889C1D3F6CFB007A8BBD /* FlashCardPlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */; };
 		2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C16875F1D2B96D9000B12B1 /* DataModels.swift */; };
 		2C1687631D2B9DC9000B12B1 /* PopverOnStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */; };
 		2C1687661D2BAFB0000B12B1 /* RegistCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */; };
@@ -43,7 +45,9 @@
 		2C0201791D2B9277006B307A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 		2C02017B1D2B9287006B307A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		2C0667131D2D0CCE007F58FC /* FlashCardPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardPlayViewController.swift; sourceTree = "<group>"; };
-		2C0667141D2D0CCE007F58FC /* FlashCardPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashCardPlayViewController.xib; sourceTree = "<group>"; };
+		2C0667141D2D0CCE007F58FC /* FlashCardPlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashCardPlayView.xib; sourceTree = "<group>"; };
+		2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardPlayView.swift; sourceTree = "<group>"; };
+		2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardPlayModel.swift; sourceTree = "<group>"; };
 		2C16875F1D2B96D9000B12B1 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopverOnStatusBar.swift; sourceTree = "<group>"; };
 		2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCardViewController.swift; sourceTree = "<group>"; };
@@ -109,11 +113,10 @@
 		2C02014F1D296BE3006B307A /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2C1488981D3F6AD5007A8BBD /* common */,
 				2CADE6451D3CFDE100F99D83 /* extension */,
 				2C0201691D2A5C74006B307A /* DataModel */,
-				2C60C44B1D278EB4009C1CD3 /* NSCustomTextFieldCell.swift */,
-				2C0201631D2A35D0006B307A /* DictionaryManager.swift */,
-				2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */,
+				2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -124,6 +127,16 @@
 				2C16875F1D2B96D9000B12B1 /* DataModels.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		2C1488981D3F6AD5007A8BBD /* common */ = {
+			isa = PBXGroup;
+			children = (
+				2C60C44B1D278EB4009C1CD3 /* NSCustomTextFieldCell.swift */,
+				2C0201631D2A35D0006B307A /* DictionaryManager.swift */,
+				2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 		2C16876C1D2BDFD2000B12B1 /* popver */ = {
@@ -139,9 +152,10 @@
 		2C16876E1D2BDFFD000B12B1 /* popver */ = {
 			isa = PBXGroup;
 			children = (
-				2C0667141D2D0CCE007F58FC /* FlashCardPlayViewController.xib */,
+				2C0667141D2D0CCE007F58FC /* FlashCardPlayView.xib */,
 				2C60C44E1D27CA19009C1CD3 /* SearchWordViewController.xib */,
 				2C1687651D2BAFB0000B12B1 /* RegistCardViewController.xib */,
+				2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */,
 			);
 			path = popver;
 			sourceTree = "<group>";
@@ -303,7 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C497F451D2C303700E4D2DE /* FlashCardsManagerView.xib in Resources */,
-				2C0667161D2D0CCE007F58FC /* FlashCardPlayViewController.xib in Resources */,
+				2C0667161D2D0CCE007F58FC /* FlashCardPlayView.xib in Resources */,
 				2C60C4391D275AC5009C1CD3 /* Assets.xcassets in Resources */,
 				2C497F431D2C288000E4D2DE /* HotKeySettingView.xib in Resources */,
 				2C9CFF2E1D2F7FF000F40888 /* EditCardWindow.xib in Resources */,
@@ -394,7 +408,9 @@
 				2C0201641D2A35D0006B307A /* DictionaryManager.swift in Sources */,
 				2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */,
 				2C497F471D2C307C00E4D2DE /* FlashCardsManagerView.swift in Sources */,
+				2C14889A1D3F6B0E007A8BBD /* FlashCardPlayView.swift in Sources */,
 				2C60E3111D2DD14D0070C112 /* MutableCollectionType+shuffle.swift in Sources */,
+				2C14889C1D3F6CFB007A8BBD /* FlashCardPlayModel.swift in Sources */,
 				2C9CFF301D2F81C800F40888 /* EditCardWindow.swift in Sources */,
 				2C60E3131D2DD1A10070C112 /* CollectionType+shuffle.swift in Sources */,
 				2C0667151D2D0CCE007F58FC /* FlashCardPlayViewController.swift in Sources */,

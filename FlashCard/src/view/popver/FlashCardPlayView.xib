@@ -5,12 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="FlashCardPlayViewController" customModule="FlashCard" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="FlashCardPlayView" customModule="FlashCard" customModuleProvider="target">
             <connections>
-                <outlet property="flashCardPlayView" destination="Hz6-mo-xeY" id="zpk-ek-9i5"/>
-                <outlet property="nowCardFront" destination="g0O-hd-9qC" id="rtp-A5-rfn"/>
-                <outlet property="previousCardBack" destination="ABb-wf-xHE" id="Qh3-W8-5vI"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="OF9-AE-Mpk"/>
+                <outlet property="backCard" destination="ABb-wf-xHE" id="sw4-1I-ZFv"/>
+                <outlet property="flashCardPlayView" destination="Hz6-mo-xeY" id="WoS-Sg-k7V"/>
+                <outlet property="frontCard" destination="g0O-hd-9qC" id="4ET-X4-S2G"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
