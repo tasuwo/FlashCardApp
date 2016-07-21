@@ -131,13 +131,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let notification : NSNotification = NSNotification(name: "didPressPreviousCardKey", object: self)
                 NSNotificationCenter.defaultCenter().postNotification(notification)
         })
-        MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
-            kPreferenceShortcut.decision.rawValue,
-            toAction: {
-                // 通知を登録
-                let notification : NSNotification = NSNotification(name: "didPressDecisionKey", object: self)
-                NSNotificationCenter.defaultCenter().postNotification(notification)
-            }
-        )
     }
 }
