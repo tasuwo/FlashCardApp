@@ -10,106 +10,38 @@ import Cocoa
 import WebKit
 import RealmSwift
 
-class RegistCardViewController: NSViewController {
-    @IBOutlet var registCardView: NSView!
-    @IBOutlet weak var frontTextField: NSTextField!
-    @IBOutlet weak var backTextField: NSTextField!
-    @IBOutlet weak var dictionaryContentsField: WebView!
+class RegistCardViewController: NSViewController, RegistCardViewDelegate {
+    var searchedWord: String!
+    private var model: RegistCardModel!
 
-    override private init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
-        // 決定ボタンが押された時の処理
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: #selector(RegistCardViewController.transitionToSearchWordView),
-            name: "didPressDecisionKey",
-            object: nil)
+    convenience init(searchedWord word: String) {
+        self.init()
+        self.searchedWord = word
     }
-
-    required internal init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    override func loadView() {
+        self.view = RegistCardView()
     }
-
-    convenience init() {
-        self.init(nibName: "RegistCardViewController", bundle: nil)!
-    }
-
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-
-    // TODO: コンストラクタに移す
-    var word: String = ""
-
-    func setFrontText(word: String) {
-        self.word = word
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // フォーカスの枠を出さない
-        self.dictionaryContentsField.focusRingType = NSFocusRingType.None
-        self.frontTextField.focusRingType = NSFocusRingType.None
-        self.backTextField.focusRingType = NSFocusRingType.None
-
-        // FrontText に入力された単語をセット
-        self.frontTextField.stringValue = self.word
-
-        // 辞書内容をセット
-        let wisdomPath = "/Library/Dictionaries/Sanseido The WISDOM English-Japanese Japanese-English Dictionary.dictionary"
-        if let result = DictionaryServiceManager().lookUp(self.word, inDictionary: wisdomPath) {
-            self.dictionaryContentsField.mainFrame.loadHTMLString(result, baseURL: nil)
-        } else {
-            self.dictionaryContentsField.mainFrame.loadHTMLString("No result", baseURL: nil)
-        }
+       
+        let registView = self.view as! RegistCardView
+        registView.delegate = self
+        
+        self.model = RegistCardModel(word: self.searchedWord)
+        self.model.delegate = registView
+        registView.model = self.model
     }
 
     override func viewDidAppear() {
-        // 最初に back text にフォーカスさせる
-        self.backTextField.becomeFirstResponder()
-
-        // Tab によるフォーカス移動をループさせる
-        self.frontTextField.nextKeyView = self.backTextField
-        self.backTextField.nextKeyView = self.frontTextField
+        let registView = RegistCardView()
+        registView.backTextField.becomeFirstResponder()
     }
     
-    // MARK: IBAction methods
+    // MARK: RegistCardViewDelegate
     
-    @IBAction func didPressEnterInBackTextField(sender: AnyObject) {
-        self.transitionToSearchWordView()
-    }
-
-    // MARK: private methods
-    
-    @objc
-    private func transitionToSearchWordView() {
-        saveCard()
-        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.setViewControllerToPopover(SearchWordViewController())
-    }
-
-    private func saveCard() {
-        let realm = try! Realm()
-        let card = Card()
-        card.id = Card.lastId(realm)
-        card.frontText = self.frontTextField.stringValue
-        card.backText = self.backTextField.stringValue
-        let holder = CardHolder()
-
-        // デフォルトカードホルダーへ追加
-        // TODO : カードホルダーの選択
-        holder.id = 0
-        let lastCards: List<Card> = CardHolder.lastCards(0, realm: realm)
-        holder.cards.appendContentsOf(lastCards)
-        holder.cards.append(card)
-
-        try! realm.write {
-            realm.add(card)
-            realm.add(holder, update: true)
-        }
-        //print(realm.objects(Card))
-        //print(realm.objects(CardHolder).first!.cards)
+    func didPressEnterWith(front: String, backText back: String) {
+        self.model.registCard(frontText: front, backText: back)
     }
 }

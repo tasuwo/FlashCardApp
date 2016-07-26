@@ -5,9 +5,8 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="HotKeySettingView" customModule="flush_card" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="HotKeySettingView" customModule="FlashCard" customModuleProvider="target">
             <connections>
-                <outlet property="decisionKey" destination="4p4-J9-h7E" id="eAW-VS-QeV"/>
                 <outlet property="hotKeySettingView" destination="HTW-Y3-RKX" id="ony-HJ-qlv"/>
                 <outlet property="launchApplicationKey" destination="nzI-pn-lpt" id="4Ca-dM-tR4"/>
                 <outlet property="launchFlushCardKey" destination="31U-OX-Yxf" id="98V-rn-0VB"/>
@@ -48,22 +47,11 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgr-SJ-ef2">
-                    <rect key="frame" x="14" y="68" width="125" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Decision                  :" id="zB7-n3-oLm">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sls-PN-VIc" customClass="MASShortcutView">
                     <rect key="frame" x="175" y="142" width="313" height="19"/>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BgP-F3-58n" customClass="MASShortcutView">
                     <rect key="frame" x="175" y="109" width="313" height="19"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4p4-J9-h7E" customClass="MASShortcutView">
-                    <rect key="frame" x="175" y="66" width="313" height="19"/>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31U-OX-Yxf" customClass="MASShortcutView">
                     <rect key="frame" x="175" y="173" width="313" height="19"/>

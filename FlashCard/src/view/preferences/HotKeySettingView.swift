@@ -20,11 +20,9 @@ class HotKeySettingView: NSView {
 
     @IBOutlet var hotKeySettingView: NSView!
     @IBOutlet weak var launchApplicationKey: MASShortcutView!
-
     @IBOutlet weak var launchFlushCardKey: MASShortcutView!
     @IBOutlet weak var nextCardKey: MASShortcutView!
     @IBOutlet weak var previousCardKey: MASShortcutView!
-    @IBOutlet weak var decisionKey: MASShortcutView!
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -40,7 +38,6 @@ class HotKeySettingView: NSView {
         self.launchFlushCardKey.associatedUserDefaultsKey = kPreferenceShortcut.flushCard.rawValue
         self.nextCardKey.associatedUserDefaultsKey = kPreferenceShortcut.nextCard.rawValue
         self.previousCardKey.associatedUserDefaultsKey = kPreferenceShortcut.previousCased.rawValue
-        self.decisionKey.associatedUserDefaultsKey = kPreferenceShortcut.decision.rawValue
     }
 
     required init?(coder: NSCoder) {

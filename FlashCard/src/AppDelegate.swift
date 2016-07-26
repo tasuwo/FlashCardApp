@@ -20,22 +20,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func selectedTabItem(sender: AnyObject) {
         let item = sender as! NSToolbarItem
         let viewType = item.tag
-        var newView: NSView? = nil
+        var newViewController: NSViewController? = nil
 
         switch(viewType) {
         case 1:
-            newView = HotKeySettingView(frame: (self.window.contentView?.frame)!)
+            newViewController = HotKeySettingViewController(frame: (self.window.contentView?.frame)!)
         case 2:
-            newView = FlashCardsManagerView(frame: (self.window.contentView?.frame)!)
+            newViewController = FlashCardsManagerViewController(frame: (self.window.contentView?.frame)!)
         default:
             return
         }
 
-        let subViews = self.window.contentView?.subviews
-        for subView: NSView in subViews! {
-            subView.removeFromSuperview()
-        }
-        self.window.contentView?.addSubview(newView!)
+        self.window.contentViewController = newViewController
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -131,13 +127,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let notification : NSNotification = NSNotification(name: "didPressPreviousCardKey", object: self)
                 NSNotificationCenter.defaultCenter().postNotification(notification)
         })
-        MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
-            kPreferenceShortcut.decision.rawValue,
-            toAction: {
-                // 通知を登録
-                let notification : NSNotification = NSNotification(name: "didPressDecisionKey", object: self)
-                NSNotificationCenter.defaultCenter().postNotification(notification)
-            }
-        )
     }
 }
