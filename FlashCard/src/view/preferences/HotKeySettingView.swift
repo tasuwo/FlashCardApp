@@ -20,7 +20,6 @@ class HotKeySettingView: NSView {
 
     @IBOutlet var hotKeySettingView: NSView!
     @IBOutlet weak var launchApplicationKey: MASShortcutView!
-
     @IBOutlet weak var launchFlushCardKey: MASShortcutView!
     @IBOutlet weak var nextCardKey: MASShortcutView!
     @IBOutlet weak var previousCardKey: MASShortcutView!

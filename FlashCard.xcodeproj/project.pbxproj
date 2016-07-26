@@ -32,12 +32,17 @@
 		2C60C4501D27CA19009C1CD3 /* SearchWordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C60C44E1D27CA19009C1CD3 /* SearchWordView.xib */; };
 		2C60E3111D2DD14D0070C112 /* MutableCollectionType+shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60E3101D2DD14D0070C112 /* MutableCollectionType+shuffle.swift */; };
 		2C60E3131D2DD1A10070C112 /* CollectionType+shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60E3121D2DD1A10070C112 /* CollectionType+shuffle.swift */; };
-		2C9CFF2E1D2F7FF000F40888 /* EditCardWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9CFF2D1D2F7FF000F40888 /* EditCardWindow.xib */; };
-		2C9CFF301D2F81C800F40888 /* EditCardWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CFF2F1D2F81C800F40888 /* EditCardWindow.swift */; };
+		2C9CFF2E1D2F7FF000F40888 /* EditCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9CFF2D1D2F7FF000F40888 /* EditCardView.xib */; };
 		2CE6D8271D4055AE00A3BAD6 /* SearchWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */; };
 		2CE6D82B1D405A9A00A3BAD6 /* SearchWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */; };
 		2CE6D82D1D40634100A3BAD6 /* RegistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */; };
 		2CE6D82F1D40654400A3BAD6 /* RegistCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82E1D40654400A3BAD6 /* RegistCardModel.swift */; };
+		2CE6D8331D40867700A3BAD6 /* FlashCardsManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D8321D40867700A3BAD6 /* FlashCardsManagerModel.swift */; };
+		2CE6D8351D40935C00A3BAD6 /* EditCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D8341D40935C00A3BAD6 /* EditCardModel.swift */; };
+		2CE6D8371D40944500A3BAD6 /* FlashCardsManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D8361D40944500A3BAD6 /* FlashCardsManagerViewController.swift */; };
+		2CEEF8F11D4757C700A12925 /* HotKeySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEF8F01D4757C700A12925 /* HotKeySettingViewController.swift */; };
+		2CF3B74D1D444F3200BBDF5E /* EditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3B74C1D444F3200BBDF5E /* EditCardViewController.swift */; };
+		2CF3B74F1D444FB400BBDF5E /* EditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3B74E1D444FB400BBDF5E /* EditCardView.swift */; };
 		DF796C5710EE696D97377FA5 /* libPods-FlashCard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 941C6D5E0BDD7AF641BFBB39 /* libPods-FlashCard.a */; };
 /* End PBXBuildFile section */
 
@@ -70,13 +75,18 @@
 		2C60C44E1D27CA19009C1CD3 /* SearchWordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchWordView.xib; sourceTree = "<group>"; };
 		2C60E3101D2DD14D0070C112 /* MutableCollectionType+shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutableCollectionType+shuffle.swift"; sourceTree = "<group>"; };
 		2C60E3121D2DD1A10070C112 /* CollectionType+shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+shuffle.swift"; sourceTree = "<group>"; };
-		2C9CFF2D1D2F7FF000F40888 /* EditCardWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCardWindow.xib; sourceTree = "<group>"; };
-		2C9CFF2F1D2F81C800F40888 /* EditCardWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardWindow.swift; sourceTree = "<group>"; };
+		2C9CFF2D1D2F7FF000F40888 /* EditCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCardView.xib; sourceTree = "<group>"; };
 		2CD301671D2D581E0018FA62 /* MASShortcut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASShortcut-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordView.swift; sourceTree = "<group>"; };
 		2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordModel.swift; sourceTree = "<group>"; };
 		2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCardView.swift; sourceTree = "<group>"; };
 		2CE6D82E1D40654400A3BAD6 /* RegistCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCardModel.swift; sourceTree = "<group>"; };
+		2CE6D8321D40867700A3BAD6 /* FlashCardsManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsManagerModel.swift; sourceTree = "<group>"; };
+		2CE6D8341D40935C00A3BAD6 /* EditCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardModel.swift; sourceTree = "<group>"; };
+		2CE6D8361D40944500A3BAD6 /* FlashCardsManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsManagerViewController.swift; sourceTree = "<group>"; };
+		2CEEF8F01D4757C700A12925 /* HotKeySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeySettingViewController.swift; sourceTree = "<group>"; };
+		2CF3B74C1D444F3200BBDF5E /* EditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardViewController.swift; sourceTree = "<group>"; };
+		2CF3B74E1D444FB400BBDF5E /* EditCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardView.swift; sourceTree = "<group>"; };
 		430D39F43AE14F375B155AB9 /* Pods-FlashCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCard/Pods-FlashCard.release.xcconfig"; sourceTree = "<group>"; };
 		49BB7EB6A0EA8F61F48BFBF5 /* Pods-FlashCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCard/Pods-FlashCard.debug.xcconfig"; sourceTree = "<group>"; };
 		941C6D5E0BDD7AF641BFBB39 /* libPods-FlashCard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlashCard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +112,7 @@
 		2C02014D1D296BC5006B307A /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				2CE6D8381D40968800A3BAD6 /* preferences */,
 				2C16876C1D2BDFD2000B12B1 /* popver */,
 				2C2864EC1D3BA81E0084E405 /* SettingViewController.swift */,
 			);
@@ -121,12 +132,11 @@
 		2C02014F1D296BE3006B307A /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2CE6D8311D40866300A3BAD6 /* preferences */,
+				2CE6D8301D40865800A3BAD6 /* popver */,
 				2C1488981D3F6AD5007A8BBD /* common */,
 				2CADE6451D3CFDE100F99D83 /* extension */,
 				2C0201691D2A5C74006B307A /* DataModel */,
-				2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */,
-				2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */,
-				2CE6D82E1D40654400A3BAD6 /* RegistCardModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -179,8 +189,8 @@
 				2C02015A1D296DB6006B307A /* HotKeySettingView.swift */,
 				2C497F441D2C303700E4D2DE /* FlashCardsManagerView.xib */,
 				2C497F461D2C307C00E4D2DE /* FlashCardsManagerView.swift */,
-				2C9CFF2D1D2F7FF000F40888 /* EditCardWindow.xib */,
-				2C9CFF2F1D2F81C800F40888 /* EditCardWindow.swift */,
+				2C9CFF2D1D2F7FF000F40888 /* EditCardView.xib */,
+				2CF3B74E1D444FB400BBDF5E /* EditCardView.swift */,
 			);
 			path = preferences;
 			sourceTree = "<group>";
@@ -241,6 +251,35 @@
 				2C0201701D2A6E07006B307A /* SequenceType+firstElement.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		2CE6D8301D40865800A3BAD6 /* popver */ = {
+			isa = PBXGroup;
+			children = (
+				2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */,
+				2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */,
+				2CE6D82E1D40654400A3BAD6 /* RegistCardModel.swift */,
+			);
+			name = popver;
+			sourceTree = "<group>";
+		};
+		2CE6D8311D40866300A3BAD6 /* preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2CE6D8321D40867700A3BAD6 /* FlashCardsManagerModel.swift */,
+				2CE6D8341D40935C00A3BAD6 /* EditCardModel.swift */,
+			);
+			name = preferences;
+			sourceTree = "<group>";
+		};
+		2CE6D8381D40968800A3BAD6 /* preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2CE6D8361D40944500A3BAD6 /* FlashCardsManagerViewController.swift */,
+				2CF3B74C1D444F3200BBDF5E /* EditCardViewController.swift */,
+				2CEEF8F01D4757C700A12925 /* HotKeySettingViewController.swift */,
+			);
+			name = preferences;
 			sourceTree = "<group>";
 		};
 		56DFB1F48E1E2BA0FC22904B /* Pods */ = {
@@ -332,7 +371,7 @@
 				2C0667161D2D0CCE007F58FC /* FlashCardPlayView.xib in Resources */,
 				2C60C4391D275AC5009C1CD3 /* Assets.xcassets in Resources */,
 				2C497F431D2C288000E4D2DE /* HotKeySettingView.xib in Resources */,
-				2C9CFF2E1D2F7FF000F40888 /* EditCardWindow.xib in Resources */,
+				2C9CFF2E1D2F7FF000F40888 /* EditCardView.xib in Resources */,
 				2C60C4501D27CA19009C1CD3 /* SearchWordView.xib in Resources */,
 				2C1687951D2BF47B000B12B1 /* MainMenu.xib in Resources */,
 				2C1687671D2BAFB0000B12B1 /* RegistCardView.xib in Resources */,
@@ -409,25 +448,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE6D8331D40867700A3BAD6 /* FlashCardsManagerModel.swift in Sources */,
 				2C1687661D2BAFB0000B12B1 /* RegistCardViewController.swift in Sources */,
+				2CF3B74F1D444FB400BBDF5E /* EditCardView.swift in Sources */,
 				2C60C4371D275AC5009C1CD3 /* AppDelegate.swift in Sources */,
 				2C60C44F1D27CA19009C1CD3 /* SearchWordViewController.swift in Sources */,
+				2CE6D8351D40935C00A3BAD6 /* EditCardModel.swift in Sources */,
 				2C2864ED1D3BA81E0084E405 /* SettingViewController.swift in Sources */,
 				2C60C44C1D278EB4009C1CD3 /* NSCustomTextFieldCell.swift in Sources */,
 				2C0201711D2A6E07006B307A /* SequenceType+firstElement.swift in Sources */,
 				2C1687631D2B9DC9000B12B1 /* PopverOnStatusBar.swift in Sources */,
 				2C02015C1D296DB6006B307A /* HotKeySettingView.swift in Sources */,
+				2CEEF8F11D4757C700A12925 /* HotKeySettingViewController.swift in Sources */,
 				2C0201641D2A35D0006B307A /* DictionaryManager.swift in Sources */,
 				2CE6D82F1D40654400A3BAD6 /* RegistCardModel.swift in Sources */,
 				2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */,
+				2CE6D8371D40944500A3BAD6 /* FlashCardsManagerViewController.swift in Sources */,
 				2CE6D82D1D40634100A3BAD6 /* RegistCardView.swift in Sources */,
 				2C497F471D2C307C00E4D2DE /* FlashCardsManagerView.swift in Sources */,
 				2C14889A1D3F6B0E007A8BBD /* FlashCardPlayView.swift in Sources */,
+				2CF3B74D1D444F3200BBDF5E /* EditCardViewController.swift in Sources */,
 				2CE6D8271D4055AE00A3BAD6 /* SearchWordView.swift in Sources */,
 				2C60E3111D2DD14D0070C112 /* MutableCollectionType+shuffle.swift in Sources */,
 				2C14889C1D3F6CFB007A8BBD /* FlashCardPlayModel.swift in Sources */,
 				2CE6D82B1D405A9A00A3BAD6 /* SearchWordModel.swift in Sources */,
-				2C9CFF301D2F81C800F40888 /* EditCardWindow.swift in Sources */,
 				2C60E3131D2DD1A10070C112 /* CollectionType+shuffle.swift in Sources */,
 				2C0667151D2D0CCE007F58FC /* FlashCardPlayViewController.swift in Sources */,
 			);

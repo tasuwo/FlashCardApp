@@ -28,7 +28,7 @@ class FlashCardPlayViewController: NSViewController, FlashCardPlayViewDelegate {
     }
       
     // MARK: FlashCardPlayViewDelegate
-    
+   
     func didPressKeyNext() {
         self.model.flipToNext()
     }
