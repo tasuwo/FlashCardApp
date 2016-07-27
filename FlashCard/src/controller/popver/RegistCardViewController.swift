@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import WebKit
 import RealmSwift
 
 class RegistCardViewController: NSViewController, RegistCardViewDelegate {

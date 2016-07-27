@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import WebKit
 
 protocol RegistCardViewDelegate {
     func didPressEnterWith(frontText: String, backText: String)
@@ -20,7 +21,7 @@ class RegistCardView: NSView, RegistCardModelDelegate {
     }
     
     @IBOutlet var registCardView: NSView!
-    @IBOutlet var dictionaryContentsField: NSTextView!
+    @IBOutlet var dictionaryContentsField: WebView!
     @IBOutlet weak var frontTextField: NSTextField!
     @IBOutlet weak var backTextField: NSTextField!
     
@@ -49,7 +50,7 @@ class RegistCardView: NSView, RegistCardModelDelegate {
     
     private func renderInitialTexts() {
         self.frontTextField.stringValue = self.model.searchedWord
-        self.dictionaryContentsField.string = self.model.dictionaryContents
+        self.dictionaryContentsField.mainFrame.loadHTMLString(self.model.dictionaryContents, baseURL: nil)
     }
     
     // MARK: RegistCardModelDelegate

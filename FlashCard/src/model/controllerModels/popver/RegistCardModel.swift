@@ -24,7 +24,7 @@ class RegistCardModel {
         // 辞書内容をセット
         let wisdomPath = "/Library/Dictionaries/Sanseido The WISDOM English-Japanese Japanese-English Dictionary.dictionary"
         if let result = DictionaryServiceManager().lookUp(self.searchedWord, inDictionary: wisdomPath) {
-            self.dictionaryContents = result
+            self.dictionaryContents = DictionaryServiceManager().parseResultToHTML(result)
         } else {
             self.dictionaryContents = "No result"
         }

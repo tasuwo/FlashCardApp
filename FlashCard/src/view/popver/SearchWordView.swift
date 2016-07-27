@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WebKit
 
 protocol SearchWordViewDelegate {
     func didCangeText(text: String)
@@ -18,7 +19,7 @@ class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
     
     @IBOutlet var searchWordView: NSView!
     @IBOutlet weak var inputWordField: NSTextField!
-    @IBOutlet var dictionaryContentsField: NSTextView!
+    @IBOutlet var dictionaryContentsField: WebView!
     @IBOutlet weak var settingsButton: NSButton!
     
     @IBAction func didPressSettingsButton (sender: AnyObject) {
@@ -55,6 +56,6 @@ class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
     // MARK: SearchWordModelDelegate
     
     func renderLookUpResult() {
-        self.dictionaryContentsField.string = self.model.lookupResult
+        self.dictionaryContentsField.mainFrame.loadHTMLString(self.model.lookupResult, baseURL: nil)
     }
 }
