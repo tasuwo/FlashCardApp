@@ -24,7 +24,7 @@ class SearchWordModel {
         let wisdomPath = "/Library/Dictionaries/Sanseido The WISDOM English-Japanese Japanese-English Dictionary.dictionary"
         
         if let result = DictionaryServiceManager().lookUp(word, inDictionary: wisdomPath) {
-            self.lookupResult = result
+            self.lookupResult = DictionaryServiceManager().parseResultToHTML(result)
         } else {
             self.lookupResult = "No result"
         }
