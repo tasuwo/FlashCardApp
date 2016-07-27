@@ -545,6 +545,48 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>2C5AB8AE1D48E08E00339122</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>String+componentsSeparated.swift</string>
+			<key>path</key>
+			<string>String+componentsSeparated.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C5AB8AF1D48E08E00339122</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C5AB8AE1D48E08E00339122</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2C5AB8B01D48E0E900339122</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>String+removeInt.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C5AB8B11D48E0E900339122</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C5AB8B01D48E0E900339122</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>2C60C42A1D275AC5009C1CD3</key>
 		<dict>
 			<key>children</key>
@@ -628,6 +670,7 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>2C5AB8B11D48E0E900339122</string>
 				<string>2CE6D8331D40867700A3BAD6</string>
 				<string>2C1687661D2BAFB0000B12B1</string>
 				<string>2CF3B74F1D444FB400BBDF5E</string>
@@ -640,6 +683,7 @@
 				<string>2C1687631D2B9DC9000B12B1</string>
 				<string>2C02015C1D296DB6006B307A</string>
 				<string>2CEEF8F11D4757C700A12925</string>
+				<string>2C5AB8AF1D48E08E00339122</string>
 				<string>2C0201641D2A35D0006B307A</string>
 				<string>2CE6D82F1D40654400A3BAD6</string>
 				<string>2C1687601D2B96D9000B12B1</string>
@@ -1203,9 +1247,11 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>2C5AB8AE1D48E08E00339122</string>
 				<string>2C60E3121D2DD1A10070C112</string>
 				<string>2C60E3101D2DD14D0070C112</string>
 				<string>2C0201701D2A6E07006B307A</string>
+				<string>2C5AB8B01D48E0E900339122</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1438,8 +1484,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>controllerModels</string>
 			<key>path</key>
 			<string>controllerModels</string>
 			<key>sourceTree</key>
