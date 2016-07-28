@@ -20,7 +20,7 @@ class NSStatusBarPopover: NSPopover {
             // TODO: アクティブでない場合，キーバインドが効かない
             menu.addItem(NSMenuItem(title: "Preferences", action: #selector(AppDelegate.showSettingView), keyEquivalent: ","))
             menu.addItem(NSMenuItem.separatorItem())
-            menu.addItem(NSMenuItem(title: "Quit Quotes", action: Selector("terminate:"), keyEquivalent: "q"))
+            menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
  
             statusItem.menu = menu
         }
