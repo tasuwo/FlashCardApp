@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzI-pn-lpt" customClass="MASShortcutView">
-                    <rect key="frame" x="175" y="216" width="313" height="19"/>
+                    <rect key="frame" x="175" y="189" width="313" height="19"/>
                 </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-c5-bWr">
-                    <rect key="frame" x="11" y="218" width="132" height="17"/>
+                    <rect key="frame" x="10" y="191" width="132" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Search and regist    : " id="Si2-0q-tPa">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -32,7 +32,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTl-0Y-L5N">
-                    <rect key="frame" x="13" y="144" width="126" height="17"/>
+                    <rect key="frame" x="13" y="127" width="126" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Next Card                :" id="miO-H2-WAg">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +40,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LEP-vZ-4gc">
-                    <rect key="frame" x="14" y="111" width="125" height="17"/>
+                    <rect key="frame" x="14" y="94" width="125" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Previous Card         :" id="AXp-se-FcS">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -48,16 +48,16 @@
                     </textFieldCell>
                 </textField>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sls-PN-VIc" customClass="MASShortcutView">
-                    <rect key="frame" x="175" y="142" width="313" height="19"/>
+                    <rect key="frame" x="175" y="125" width="313" height="19"/>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BgP-F3-58n" customClass="MASShortcutView">
-                    <rect key="frame" x="175" y="109" width="313" height="19"/>
+                    <rect key="frame" x="175" y="92" width="313" height="19"/>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31U-OX-Yxf" customClass="MASShortcutView">
-                    <rect key="frame" x="175" y="173" width="313" height="19"/>
+                    <rect key="frame" x="175" y="156" width="313" height="19"/>
                 </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dYv-Aw-cxj">
-                    <rect key="frame" x="12" y="175" width="127" height="17"/>
+                    <rect key="frame" x="12" y="158" width="127" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Play Flush Card       :" id="a1M-HS-03b">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
