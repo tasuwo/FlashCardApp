@@ -10,7 +10,7 @@ import Foundation
 
 class NSStatusBarPopover: NSPopover {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
-    var containerViewController = BaseViewController()
+    var containerViewController: NSViewController!
     private(set) var fromVC: NSViewController!
     private(set) var animating = false
 
@@ -29,12 +29,19 @@ class NSStatusBarPopover: NSPopover {
         }
         super.init()
 
-        fromVC = SearchWordViewController()
+        self.containerViewController = BaseViewController()
         self.containerViewController.view.wantsLayer = true
-        self.containerViewController.view.frame = self.fromVC.view.bounds
+
+        fromVC = SearchWordViewController()
         self.containerViewController.addChildViewController(self.fromVC)
         self.containerViewController.view.addSubview(self.fromVC.view)
-        self.contentViewController = self.containerViewController
+        self.containerViewController.view.frame = self.fromVC.view.bounds
+
+        let navigater = NavigationViewController()
+        navigater.addChildViewController(self.containerViewController)
+        let navigateView = navigater.view as! NavigationView
+        navigateView.contentView.addSubview(self.containerViewController.view)
+        self.contentViewController = navigater
     }
 
     required init?(coder: NSCoder) {
@@ -62,7 +69,6 @@ class NSStatusBarPopover: NSPopover {
     func changeViewController(toVC: NSViewController) {
         animating = true
 
-        self.contentViewController?.viewWillTransitionToSize(toVC.view.frame.size)
         self.containerViewController.addChildViewController(toVC)
         let transition: NSViewControllerTransitionOptions = .SlideLeft
 

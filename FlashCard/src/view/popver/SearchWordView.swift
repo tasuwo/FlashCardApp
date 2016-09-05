@@ -20,13 +20,7 @@ class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
     @IBOutlet var searchWordView: NSView!
     @IBOutlet weak var inputWordField: NSTextField!
     @IBOutlet var dictionaryContentsField: WebView!
-    @IBOutlet weak var settingsButton: NSButton!
-    
-    @IBAction func didPressSettingsButton (sender: AnyObject) {
-        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.showSettingView()
-    }
-    
+
     @IBAction func didPressEnterButtonInInputTextField (sender: AnyObject) {
         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         let vc = RegistCardViewController(searchedWord: self.inputWordField.stringValue)
@@ -44,7 +38,6 @@ class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
 
         self.inputWordField.focusRingType = NSFocusRingType.None
         self.dictionaryContentsField.focusRingType = NSFocusRingType.None
-        self.settingsButton.focusRingType = NSFocusRingType.None
     }
     
     // MARK: NSTextFieldDelegate

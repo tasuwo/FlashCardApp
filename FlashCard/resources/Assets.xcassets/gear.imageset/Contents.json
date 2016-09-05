@@ -2,16 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "gear.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Entypo_e78d(0)_24.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Entypo_e78d(0)_48.png",
       "scale" : "3x"
     }
   ],

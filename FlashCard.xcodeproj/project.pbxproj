@@ -26,8 +26,11 @@
 		2C497F451D2C303700E4D2DE /* FlashCardsManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C497F441D2C303700E4D2DE /* FlashCardsManagerView.xib */; };
 		2C497F471D2C307C00E4D2DE /* FlashCardsManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C497F461D2C307C00E4D2DE /* FlashCardsManagerView.swift */; };
 		2C58DB1E1D7DE1280060E75E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58DB1D1D7DE1280060E75E /* BaseView.swift */; };
-		2C58DB201D7DE13F0060E75E /* BaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C58DB1F1D7DE13F0060E75E /* BaseView.xib */; };
+		2C58DB201D7DE13F0060E75E /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C58DB1F1D7DE13F0060E75E /* NavigationView.xib */; };
 		2C58DB221D7DE5040060E75E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58DB211D7DE5040060E75E /* BaseViewController.swift */; };
+		2C58DB241D7E02A60060E75E /* BaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C58DB231D7E02A60060E75E /* BaseView.xib */; };
+		2C58DB261D7E03070060E75E /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58DB251D7E03070060E75E /* NavigationView.swift */; };
+		2C58DB281D7E03DD0060E75E /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */; };
 		2C5AB8AF1D48E08E00339122 /* String+componentsSeparated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AB8AE1D48E08E00339122 /* String+componentsSeparated.swift */; };
 		2C5AB8B11D48E0E900339122 /* String+removeInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AB8B01D48E0E900339122 /* String+removeInt.swift */; };
 		2C60C4371D275AC5009C1CD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60C4361D275AC5009C1CD3 /* AppDelegate.swift */; };
@@ -72,8 +75,11 @@
 		2C497F441D2C303700E4D2DE /* FlashCardsManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashCardsManagerView.xib; sourceTree = "<group>"; };
 		2C497F461D2C307C00E4D2DE /* FlashCardsManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsManagerView.swift; sourceTree = "<group>"; };
 		2C58DB1D1D7DE1280060E75E /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		2C58DB1F1D7DE13F0060E75E /* BaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseView.xib; sourceTree = "<group>"; };
+		2C58DB1F1D7DE13F0060E75E /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		2C58DB211D7DE5040060E75E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2C58DB231D7E02A60060E75E /* BaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseView.xib; sourceTree = "<group>"; };
+		2C58DB251D7E03070060E75E /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		2C5AB8AE1D48E08E00339122 /* String+componentsSeparated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+componentsSeparated.swift"; sourceTree = "<group>"; };
 		2C5AB8B01D48E0E900339122 /* String+removeInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+removeInt.swift"; sourceTree = "<group>"; };
 		2C60C4331D275AC5009C1CD3 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,11 +190,13 @@
 				2C0667141D2D0CCE007F58FC /* FlashCardPlayView.xib */,
 				2C60C44E1D27CA19009C1CD3 /* SearchWordView.xib */,
 				2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */,
+				2C58DB231D7E02A60060E75E /* BaseView.xib */,
+				2C58DB1F1D7DE13F0060E75E /* NavigationView.xib */,
 				2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */,
 				2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */,
 				2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */,
 				2C58DB1D1D7DE1280060E75E /* BaseView.swift */,
-				2C58DB1F1D7DE13F0060E75E /* BaseView.xib */,
+				2C58DB251D7E03070060E75E /* NavigationView.swift */,
 			);
 			path = popver;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 				2CF3B74C1D444F3200BBDF5E /* EditCardViewController.swift */,
 				2CEEF8F01D4757C700A12925 /* HotKeySettingViewController.swift */,
 				2C58DB211D7DE5040060E75E /* BaseViewController.swift */,
+				2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */,
 			);
 			path = preferences;
 			sourceTree = "<group>";
@@ -393,10 +402,11 @@
 				2C497F451D2C303700E4D2DE /* FlashCardsManagerView.xib in Resources */,
 				2C0667161D2D0CCE007F58FC /* FlashCardPlayView.xib in Resources */,
 				2C60C4391D275AC5009C1CD3 /* Assets.xcassets in Resources */,
-				2C58DB201D7DE13F0060E75E /* BaseView.xib in Resources */,
+				2C58DB201D7DE13F0060E75E /* NavigationView.xib in Resources */,
 				2C497F431D2C288000E4D2DE /* HotKeySettingView.xib in Resources */,
 				2C9CFF2E1D2F7FF000F40888 /* EditCardView.xib in Resources */,
 				2C60C4501D27CA19009C1CD3 /* SearchWordView.xib in Resources */,
+				2C58DB241D7E02A60060E75E /* BaseView.xib in Resources */,
 				2C1687951D2BF47B000B12B1 /* MainMenu.xib in Resources */,
 				2C1687671D2BAFB0000B12B1 /* RegistCardView.xib in Resources */,
 			);
@@ -480,6 +490,7 @@
 				2C58DB221D7DE5040060E75E /* BaseViewController.swift in Sources */,
 				2C60C4371D275AC5009C1CD3 /* AppDelegate.swift in Sources */,
 				2C60C44F1D27CA19009C1CD3 /* SearchWordViewController.swift in Sources */,
+				2C58DB281D7E03DD0060E75E /* NavigationViewController.swift in Sources */,
 				2CE6D8351D40935C00A3BAD6 /* EditCardModel.swift in Sources */,
 				2C2864ED1D3BA81E0084E405 /* SettingViewController.swift in Sources */,
 				2C60C44C1D278EB4009C1CD3 /* NSCustomTextFieldCell.swift in Sources */,
@@ -490,6 +501,7 @@
 				2C5AB8AF1D48E08E00339122 /* String+componentsSeparated.swift in Sources */,
 				2C0201641D2A35D0006B307A /* DictionaryManager.swift in Sources */,
 				2CE6D82F1D40654400A3BAD6 /* RegistCardModel.swift in Sources */,
+				2C58DB261D7E03070060E75E /* NavigationView.swift in Sources */,
 				2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */,
 				2CE6D8371D40944500A3BAD6 /* FlashCardsManagerViewController.swift in Sources */,
 				2CE6D82D1D40634100A3BAD6 /* RegistCardView.swift in Sources */,
