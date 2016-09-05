@@ -63,7 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: control popover methods
 
     func setViewControllerToPopover(vc: NSViewController) {
-        self.popover.contentViewController?.view.frame = vc.view.frame
+        self.popover.contentViewController?.viewWillTransitionToSize(vc.view.frame.size)
         self.popover.contentViewController = vc
     }
 
