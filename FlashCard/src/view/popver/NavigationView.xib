@@ -34,10 +34,16 @@
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xvK-6T-QRt">
                     <rect key="frame" x="0.0" y="0.0" width="500" height="311"/>
                 </customView>
-                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32Z-yv-g5e">
-                    <rect key="frame" x="469" y="321" width="19" height="19"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="gear" id="lp3-Bo-Qmc"/>
-                </imageView>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhW-e7-pZd">
+                    <rect key="frame" x="468" y="320" width="20" height="20"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="gear" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="AiA-CK-kUX">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="didPressSettingButton:" target="-2" id="Tff-kw-jcH"/>
+                    </connections>
+                </button>
             </subviews>
             <point key="canvasLocation" x="565" y="360"/>
         </customView>

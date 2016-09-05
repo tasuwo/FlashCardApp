@@ -11,6 +11,10 @@ import Foundation
 class NavigationView : NSView {
     @IBOutlet var navigationView: NSView!
     @IBOutlet weak var contentView: NSView!
+    @IBAction func didPressSettingButton(sender: AnyObject) {
+        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.showSettingView()
+    }
 
     convenience init() {
         self.init(frame: CGRectMake(0, 0, 0, 0))
