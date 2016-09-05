@@ -51,15 +51,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 realm.add(cardHolder)
             }
         }
-
-        self.setViewControllerToPopover(SearchWordViewController())
     }
 
     // MARK: control popover methods
 
     func setViewControllerToPopover(vc: NSViewController) {
-        self.popover.contentViewController?.viewWillTransitionToSize(vc.view.frame.size)
-        self.popover.contentViewController = vc
+        self.popover.changeViewController(vc)
     }
 
     func togglePopover() {
@@ -83,7 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var willChangeView = false
         let willShowView = !self.popover.shown
 
-        if self.popover.contentViewController!.isKindOfClass(nextViewController as AnyClass) == false {
+        if self.popover.fromVC.isKindOfClass(nextViewController as AnyClass) == false {
             willChangeView = true
         }
 
@@ -104,11 +101,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func initHotKeyActions() {
         MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
             kPreferenceShortcut.launch.rawValue,
-            toAction: { self.switchPopover(SearchWordViewController) }
+            toAction: {
+                if (!self.popover.animating) {
+                    self.switchPopover(SearchWordViewController)
+                }
+            }
         )
         MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
             kPreferenceShortcut.flushCard.rawValue,
-            toAction: { self.switchPopover(FlashCardPlayViewController)}
+            toAction: {
+                if (!self.popover.animating) {
+                    self.switchPopover(FlashCardPlayViewController)
+                }
+            }
         )
         MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
             kPreferenceShortcut.nextCard.rawValue,
