@@ -43,11 +43,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let realm = try! Realm()
         let defaultHolder = realm.objects(CardHolder).filter("id == 0")
 
-        // DEBUG:
-        //try! realm.write {
-        //    realm.deleteAll()
-        //}
-
         if defaultHolder.count == 0 {
             let cardHolder = CardHolder()
             cardHolder.id = 0
