@@ -78,7 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if self.popover.fromVC.isKindOfClass(nextViewController as AnyClass) == false {
             shouldChangeView = true
         }
-
+        var option: NSViewControllerTransitionOptions? = nil
         var toggle = {
             let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.popover.togglePopover(nil)
@@ -89,8 +89,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             toggle = {}
         }
 
+        if isPopoverShown == false {
+            option = .None
+        }
+
         if shouldChangeView {
-            self.popover.changeViewController(nextViewController.init(), callback: toggle)
+            self.popover.changeViewController(nextViewController.init(), transition: option, callback: toggle)
         } else {
             toggle()
         }

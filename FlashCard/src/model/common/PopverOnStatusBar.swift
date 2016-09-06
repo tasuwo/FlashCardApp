@@ -66,14 +66,14 @@ class NSStatusBarPopover: NSPopover {
         }
     }
 
-    func changeViewController(toVC: NSViewController, callback: () -> Void) {
+    func changeViewController(toVC: NSViewController, transition option: NSViewControllerTransitionOptions?, callback: () -> Void) {
         animating = true
         self.containerViewController.addChildViewController(toVC)
-        let transition = getTransitionOptionTo(toVC)
+        let transition = option == nil ? getTransitionOptionTo(toVC) : option
         self.containerViewController.transitionFromViewController(
             self.fromVC,
             toViewController: toVC,
-            options: transition,
+            options: transition!,
             completionHandler: {
                 finished in
                 self.fromVC.view.removeFromSuperview()
