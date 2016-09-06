@@ -35,8 +35,8 @@ class RegistCardViewController: NSViewController, RegistCardViewDelegate {
     }
 
     override func viewDidAppear() {
-        let registView = RegistCardView()
-        registView.backTextField.becomeFirstResponder()
+        let parentView = self.parentViewController?.parentViewController as? NavigationViewController
+        parentView?.updateFirstResponder(self)
     }
     
     // MARK: RegistCardViewDelegate

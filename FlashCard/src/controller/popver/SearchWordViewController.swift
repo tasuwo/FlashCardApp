@@ -28,11 +28,11 @@ class SearchWordViewController: NSViewController, SearchWordViewDelegate {
         searchView.model = self.model
     }
     
-    override func viewWillAppear() {
-        let searchView = self.view as! SearchWordView
-        searchView.inputWordField.becomeFirstResponder()
+    override func viewDidAppear() {
+        let parentView = self.parentViewController?.parentViewController as? NavigationViewController
+        parentView?.updateFirstResponder(self)
     }
-    
+
     // MARK: SearchWordViewDelegate
     
     func didCangeText(text: String) {

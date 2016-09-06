@@ -76,10 +76,10 @@
 		2C497F461D2C307C00E4D2DE /* FlashCardsManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsManagerView.swift; sourceTree = "<group>"; };
 		2C58DB1D1D7DE1280060E75E /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		2C58DB1F1D7DE13F0060E75E /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
-		2C58DB211D7DE5040060E75E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2C58DB211D7DE5040060E75E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../preferences/BaseViewController.swift; sourceTree = "<group>"; };
 		2C58DB231D7E02A60060E75E /* BaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseView.xib; sourceTree = "<group>"; };
 		2C58DB251D7E03070060E75E /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
-		2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationViewController.swift; path = ../preferences/NavigationViewController.swift; sourceTree = "<group>"; };
 		2C5AB8AE1D48E08E00339122 /* String+componentsSeparated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+componentsSeparated.swift"; sourceTree = "<group>"; };
 		2C5AB8B01D48E0E900339122 /* String+removeInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+removeInt.swift"; sourceTree = "<group>"; };
 		2C60C4331D275AC5009C1CD3 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +177,8 @@
 		2C16876C1D2BDFD2000B12B1 /* popver */ = {
 			isa = PBXGroup;
 			children = (
+				2C58DB211D7DE5040060E75E /* BaseViewController.swift */,
+				2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */,
 				2C60C44D1D27CA19009C1CD3 /* SearchWordViewController.swift */,
 				2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */,
 				2C0667131D2D0CCE007F58FC /* FlashCardPlayViewController.swift */,
@@ -299,8 +301,6 @@
 				2CE6D8361D40944500A3BAD6 /* FlashCardsManagerViewController.swift */,
 				2CF3B74C1D444F3200BBDF5E /* EditCardViewController.swift */,
 				2CEEF8F01D4757C700A12925 /* HotKeySettingViewController.swift */,
-				2C58DB211D7DE5040060E75E /* BaseViewController.swift */,
-				2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */,
 			);
 			path = preferences;
 			sourceTree = "<group>";
