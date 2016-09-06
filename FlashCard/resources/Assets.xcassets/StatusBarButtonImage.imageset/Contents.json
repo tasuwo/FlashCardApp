@@ -5,12 +5,12 @@
     },
     {
       "idiom" : "mac",
-      "filename" : "Entypo_d83d(0)_24.png",
+      "filename" : "icon_normal.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "Entypo_d83d(0)_48.png",
+      "filename" : "icon_big.png",
       "scale" : "2x"
     }
   ],
