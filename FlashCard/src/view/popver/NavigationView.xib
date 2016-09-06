@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="contentView" destination="xvK-6T-QRt" id="3tC-gB-nBX"/>
                 <outlet property="navigationView" destination="xDZ-wW-y7K" id="5mQ-eA-06D"/>
+                <outlet property="settingButton" destination="jhW-e7-pZd" id="lrR-ag-Nb7"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -18,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c3n-Ji-dMr">
-                    <rect key="frame" x="12" y="308" width="476" height="5"/>
+                    <rect key="frame" x="12" y="308" width="476" height="4"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>

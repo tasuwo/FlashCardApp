@@ -11,6 +11,7 @@ import Foundation
 class NavigationView : NSView {
     @IBOutlet var navigationView: NSView!
     @IBOutlet weak var contentView: NSView!
+    @IBOutlet weak var settingButton: NSButton!
     @IBAction func didPressSettingButton(sender: AnyObject) {
         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.showSettingView()
@@ -22,5 +23,8 @@ class NavigationView : NSView {
         NSBundle.mainBundle().loadNibNamed("NavigationView", owner: self, topLevelObjects: nil)
         self.frame = self.navigationView.frame
         addSubview(self.navigationView)
+
+        // フォーカスの枠をださない
+        self.settingButton.focusRingType = NSFocusRingType.None
     }
 }
