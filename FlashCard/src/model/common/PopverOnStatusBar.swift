@@ -66,12 +66,10 @@ class NSStatusBarPopover: NSPopover {
         }
     }
 
-    func changeViewController(toVC: NSViewController) {
+    func changeViewController(toVC: NSViewController, callback: () -> Void) {
         animating = true
-
         self.containerViewController.addChildViewController(toVC)
-        let transition: NSViewControllerTransitionOptions = .SlideLeft
-
+        let transition = getTransitionOptionTo(toVC)
         self.containerViewController.transitionFromViewController(
             self.fromVC,
             toViewController: toVC,
@@ -82,7 +80,21 @@ class NSStatusBarPopover: NSPopover {
                 self.fromVC.removeFromParentViewController()
                 self.fromVC = toVC
                 self.animating = false
+                callback()
             }
         )
+    }
+
+    private func getTransitionOptionTo(toVC: NSViewController) -> NSViewControllerTransitionOptions {
+        switch toVC {
+        case _ as FlashCardPlayViewController:
+            return .SlideLeft
+        case _ as SearchWordViewController:
+            return .SlideRight
+        case _ as RegistCardViewController:
+            return .SlideLeft
+        default:
+            return .None
+        }
     }
 }

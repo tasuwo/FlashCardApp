@@ -55,10 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: control popover methods
 
-    func setViewControllerToPopover(vc: NSViewController) {
-        self.popover.changeViewController(vc)
-    }
-
     func togglePopover() {
         self.popover.togglePopover(nil)
     }
@@ -77,21 +73,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: private methods
 
     private func switchPopover(nextViewController: NSViewController.Type) {
-        var willChangeView = false
-        let willShowView = !self.popover.shown
-
+        var shouldChangeView = false
+        let isPopoverShown = self.popover.shown
         if self.popover.fromVC.isKindOfClass(nextViewController as AnyClass) == false {
-            willChangeView = true
+            shouldChangeView = true
         }
 
-        if willChangeView == true && willShowView == false {
-            self.setViewControllerToPopover(nextViewController.init())
-        } else if willChangeView == true && willShowView == true {
-            self.popover.togglePopover(nil)
-            self.setViewControllerToPopover(nextViewController.init())
-        } else {
-            self.popover.togglePopover(nil)
+        var toggle = {
+            let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.popover.togglePopover(nil)
         }
+
+        // view の切替時にはトグルしない
+        if isPopoverShown && shouldChangeView {
+            toggle = {}
+        }
+
+        if shouldChangeView {
+            self.popover.changeViewController(nextViewController.init(), callback: toggle)
+        } else {
+            toggle()
+        }
+
         // popver をアクティブにする
         if self.popover.shown {
             NSApplication.sharedApplication().activateIgnoringOtherApps(true)
