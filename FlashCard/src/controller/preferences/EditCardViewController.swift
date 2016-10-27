@@ -20,7 +20,7 @@ class EditCardViewController: NSViewController, EditCardDelegate {
     }
     
     override func loadView() {
-        self.view = EditCardView(frame: CGRectMake(0,0,100,100))
+        self.view = EditCardView(frame: CGRect(x: 0,y: 0,width: 100,height: 100))
     }
     
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class EditCardViewController: NSViewController, EditCardDelegate {
         self.view.window?.close()
     }
     
-    func didPressUpdate(front: String, backtext back: String) {
+    func didPressUpdate(_ front: String, backtext back: String) {
         self.model.updateCard(frontText: front, backText: back)
         self.managerModel.reloadTable()
         self.view.window?.close()

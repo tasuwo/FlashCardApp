@@ -16,15 +16,15 @@ protocol FlashCardPlayModelDelegate {
 class FlashCardPlayModel {
     var delegate: FlashCardPlayModelDelegate!
     
-    private var cards = [(Int, String, String)]()
-    private var index = 0
-    private(set) var backCardText: String = ""
-    private(set) var frontCardText: String = ""
+    fileprivate var cards = [(Int, String, String)]()
+    fileprivate var index = 0
+    fileprivate(set) var backCardText: String = ""
+    fileprivate(set) var frontCardText: String = ""
     
     init() {
         // Load cards
         let realm = try! Realm()
-        let cards = realm.objects(Card)
+        let cards = realm.objects(Card.self)
         for card in cards {
             self.cards.append((card.id, card.frontText, card.backText))
         }

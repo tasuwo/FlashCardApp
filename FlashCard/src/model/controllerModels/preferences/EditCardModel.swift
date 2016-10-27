@@ -16,13 +16,13 @@ protocol EditCardModelDelegate {
 class EditCardModel {
     var delegate: EditCardModelDelegate!
     
-    private(set) var id: Int!
-    private(set) var frontText: String!
-    private(set) var backText: String!
+    fileprivate(set) var id: Int!
+    fileprivate(set) var frontText: String!
+    fileprivate(set) var backText: String!
     
     init (id: Int) {
         let realm = try! Realm()
-        let card = realm.objects(Card).filter("id == \(id)").first
+        let card = realm.objects(Card.self).filter("id == \(id)").first
         
         if let targetCard = card {
             self.id = targetCard.id
@@ -37,7 +37,7 @@ class EditCardModel {
     func deleteCard() {
         let realm = try! Realm()
         try! realm.write {
-            let card = realm.objects(Card).filter("id == \(self.id)").first!
+            let card = realm.objects(Card.self).filter("id == \(self.id)").first!
             realm.delete(card)
         }
     }

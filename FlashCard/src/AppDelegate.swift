@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var popover: NSStatusBarPopover = NSStatusBarPopover()
 
-    @IBAction func selectedTabItem(sender: AnyObject) {
+    @IBAction func selectedTabItem(_ sender: AnyObject) {
         let item = sender as! NSToolbarItem
         let viewType = item.tag
         var newViewController: NSViewController? = nil
@@ -34,14 +34,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.window.contentViewController = newViewController
     }
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.mainView.addSubview(HotKeySettingView(frame: (self.window.contentView?.frame)!))
         self.window.contentView = self.mainView
 
         initHotKeyActions()
 
         let realm = try! Realm()
-        let defaultHolder = realm.objects(CardHolder).filter("id == 0")
+        let defaultHolder = realm.objects(CardHolder.self).filter("id == 0")
 
         if defaultHolder.count == 0 {
             let cardHolder = CardHolder()
@@ -63,7 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 設定画面の表示
         self.window.setIsVisible(true)
         // popver をしまう
-        if self.popover.shown {
+        if self.popover.isShown {
             self.togglePopover()
         }
         // 設定画面を最前面にする
@@ -72,15 +72,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: private methods
 
-    private func switchPopover(nextViewController: NSViewController.Type) {
+    fileprivate func switchPopover(_ nextViewController: NSViewController.Type) {
         var shouldChangeView = false
-        let isPopoverShown = self.popover.shown
-        if self.popover.fromVC.isKindOfClass(nextViewController as AnyClass) == false {
+        let isPopoverShown = self.popover.isShown
+        if self.popover.fromVC.isKind(of: nextViewController as AnyClass) == false {
             shouldChangeView = true
         }
         var option: NSViewControllerTransitionOptions? = nil
         var toggle = {
-            let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+            let appDelegate = NSApplication.shared().delegate as! AppDelegate
             appDelegate.popover.togglePopover(nil)
         }
 
@@ -90,7 +90,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         if isPopoverShown == false {
-            option = .None
+            option = .none
         }
 
         if shouldChangeView {
@@ -100,39 +100,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         // popver をアクティブにする
-        if self.popover.shown {
-            NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+        if self.popover.isShown {
+            NSApplication.shared().activate(ignoringOtherApps: true)
         }
     }
 
-    private func initHotKeyActions() {
-        MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
-            kPreferenceShortcut.launch.rawValue,
+    fileprivate func initHotKeyActions() {
+        MASShortcutBinder.shared().bindShortcut(
+            withDefaultsKey: kPreferenceShortcut.launch.rawValue,
             toAction: {
                 if (!self.popover.animating) {
-                    self.switchPopover(SearchWordViewController)
+                    self.switchPopover(SearchWordViewController.self)
                 }
             }
         )
-        MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
-            kPreferenceShortcut.flushCard.rawValue,
+        MASShortcutBinder.shared().bindShortcut(
+            withDefaultsKey: kPreferenceShortcut.flushCard.rawValue,
             toAction: {
                 if (!self.popover.animating) {
-                    self.switchPopover(FlashCardPlayViewController)
+                    self.switchPopover(FlashCardPlayViewController.self)
                 }
             }
         )
-        MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
-            kPreferenceShortcut.nextCard.rawValue,
+        MASShortcutBinder.shared().bindShortcut(
+            withDefaultsKey: kPreferenceShortcut.nextCard.rawValue,
             toAction: {
-                let notification : NSNotification = NSNotification(name: "didPressNextCardKey", object: self)
-                NSNotificationCenter.defaultCenter().postNotification(notification)
+                let notification : Notification = Notification(name: Notification.Name(rawValue: "didPressNextCardKey"), object: self)
+                NotificationCenter.default.post(notification)
         })
-        MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey(
-            kPreferenceShortcut.previousCased.rawValue,
+        MASShortcutBinder.shared().bindShortcut(
+            withDefaultsKey: kPreferenceShortcut.previousCased.rawValue,
             toAction: {
-                let notification : NSNotification = NSNotification(name: "didPressPreviousCardKey", object: self)
-                NSNotificationCenter.defaultCenter().postNotification(notification)
+                let notification : Notification = Notification(name: Notification.Name(rawValue: "didPressPreviousCardKey"), object: self)
+                NotificationCenter.default.post(notification)
         })
     }
 }

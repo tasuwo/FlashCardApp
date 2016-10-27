@@ -12,7 +12,7 @@ import RealmSwift
 
 class RegistCardViewController: NSViewController, RegistCardViewDelegate {
     var searchedWord: String!
-    private var model: RegistCardModel!
+    fileprivate var model: RegistCardModel!
 
     convenience init(searchedWord word: String) {
         self.init()
@@ -35,13 +35,13 @@ class RegistCardViewController: NSViewController, RegistCardViewDelegate {
     }
 
     override func viewDidAppear() {
-        let parentView = self.parentViewController?.parentViewController as? NavigationViewController
+        let parentView = self.parent?.parent as? NavigationViewController
         parentView?.updateFirstResponder(self)
     }
     
     // MARK: RegistCardViewDelegate
     
-    func didPressEnterWith(front: String, backText back: String) {
+    func didPressEnterWith(_ front: String, backText back: String) {
         self.model.registCard(frontText: front, backText: back)
     }
 }

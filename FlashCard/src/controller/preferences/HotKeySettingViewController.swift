@@ -10,7 +10,7 @@ import Foundation
 
 
 class HotKeySettingViewController: NSViewController {
-    private var parentFrame: CGRect!
+    fileprivate var parentFrame: CGRect!
     
     convenience init(frame: CGRect) {
         self.init()

@@ -11,9 +11,9 @@ import Cocoa
 import Carbon
 
 class NSCustomTextFieldCell: NSTextFieldCell {
-    override func drawingRectForBounds(theRect: NSRect) -> NSRect {
+    override func drawingRect(forBounds theRect: NSRect) -> NSRect {
         let textHeight: CGFloat = 40.0
         let newRect = NSRect(x: 0, y: (theRect.size.height - textHeight) / 2, width: theRect.size.width, height: textHeight)
-        return super.drawingRectForBounds(newRect)
+        return super.drawingRect(forBounds: newRect)
     }
 }

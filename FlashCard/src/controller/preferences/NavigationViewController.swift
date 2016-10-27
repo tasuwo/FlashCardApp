@@ -20,7 +20,7 @@ class NavigationViewController: NSViewController {
         updateFirstResponder(contentVC!)
     }
 
-    func updateFirstResponder(contentViewController: NSViewController) {
+    func updateFirstResponder(_ contentViewController: NSViewController) {
         switch contentViewController {
         case let vc as SearchWordViewController:
             let view = vc.view as! SearchWordView

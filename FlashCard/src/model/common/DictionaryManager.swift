@@ -11,46 +11,46 @@ import Foundation
 import WebKit
 
 class DictionaryServiceManager {
-    private let AppleGlobalDomainName = "Apple Global Domain"
-    private let DictionaryServicesKey = "com.apple.DictionaryServices"
-    private let ActiveDictionariesKey = "DCSActiveDictionaries"
+    fileprivate let AppleGlobalDomainName = "Apple Global Domain"
+    fileprivate let DictionaryServicesKey = "com.apple.DictionaryServices"
+    fileprivate let ActiveDictionariesKey = "DCSActiveDictionaries"
 
-    private func userDefaults() -> NSUserDefaults {
-        return NSUserDefaults.standardUserDefaults()
+    fileprivate func userDefaults() -> UserDefaults {
+        return UserDefaults.standard
     }
 
-    private func globalDomain() -> [String : AnyObject]? {
-        return userDefaults().persistentDomainForName(AppleGlobalDomainName)
+    fileprivate func globalDomain() -> [String : AnyObject]? {
+        return userDefaults().persistentDomain(forName: AppleGlobalDomainName) as [String : AnyObject]?
     }
 
-    private func dictionaryPreferences() -> [NSObject : AnyObject]? {
-        return globalDomain()?[DictionaryServicesKey] as! [NSObject : AnyObject]?
+    fileprivate func dictionaryPreferences() -> [AnyHashable: Any]? {
+        return globalDomain()?[DictionaryServicesKey] as! [AnyHashable: Any]?
     }
 
-    private func currentDictionaryList() -> [NSString]? {
+    fileprivate func currentDictionaryList() -> [NSString]? {
         // TODO : nil だったら(デフォルト辞書が登録されていなかったら)登録する
         return dictionaryPreferences()?[ActiveDictionariesKey] as! [NSString]?
     }
 
-    private func setUserDictPreferences(activeDictionaries : [NSString]) {
+    fileprivate func setUserDictPreferences(_ activeDictionaries : [NSString]) {
         if var currentPref = dictionaryPreferences() {
             currentPref[ActiveDictionariesKey] = activeDictionaries
             if var gDomain = globalDomain() {
-                gDomain[DictionaryServicesKey] = currentPref
+                gDomain[DictionaryServicesKey] = currentPref as AnyObject?
                 userDefaults().setPersistentDomain(gDomain, forName: AppleGlobalDomainName)
             }
         }
     }
 
-    func lookUp(word : String, inDictionary dictionaryPath : String) -> String? {
+    func lookUp(_ word : String, inDictionary dictionaryPath : String) -> String? {
         // 現在の辞書設定を保存
         let currentPrefs = currentDictionaryList()
 
         // 辞書設定を検索対象のものに更新
-        setUserDictPreferences([dictionaryPath])
+        setUserDictPreferences([dictionaryPath as NSString])
 
         // 検索
-        let result : String? = DCSCopyTextDefinition(nil, word, CFRangeMake(0, (word as NSString).length))?.takeRetainedValue() as String?
+        let result : String? = DCSCopyTextDefinition(nil, word as CFString, CFRangeMake(0, (word as NSString).length))?.takeRetainedValue() as String?
 
         // 辞書設定を検索以前のものに戻す
         if currentPrefs != nil {
@@ -60,7 +60,7 @@ class DictionaryServiceManager {
         return result
     }
     
-    func parseResultToHTML(result: String) -> String {
+    func parseResultToHTML(_ result: String) -> String {
         var body = ""
         
         let tmp1 = result.componentsSeparatedByAfterStringAt("/", num: 2)
@@ -96,15 +96,15 @@ class DictionaryServiceManager {
             definisionArray.append(bulletPoint)
             definisionArray.append("<br>")
         }
-        definision = definisionArray.joinWithSeparator("")
+        definision = definisionArray.joined(separator: "")
         
         // 段落
         let pattern = "([0-9]+\\s)"
         let replace = "</div><div id='paragraph'>$1"
-        definision = definision.stringByReplacingOccurrencesOfString(
-                pattern,
-                withString: replace,
-                options: NSStringCompareOptions.RegularExpressionSearch,
+        definision = definision.replacingOccurrences(
+                of: pattern,
+                with: replace,
+                options: NSString.CompareOptions.regularExpression,
                 range: nil)
         definision = definision + "</p>"
        
@@ -123,7 +123,7 @@ class DictionaryServiceManager {
         let html = "<html>"
                 +    "<head>"
                 +      "<style type=\"text/css\">"
-                +        css.joinWithSeparator("")
+                +        css.joined(separator: "")
                 +      "</style>"
                 +    "</head>"
                 +    "<body>"

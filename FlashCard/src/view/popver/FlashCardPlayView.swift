@@ -24,31 +24,31 @@ class FlashCardPlayView: NSView, FlashCardPlayModelDelegate {
     @IBOutlet weak var backCard: NSTextFieldCell!
    
     convenience init() {
-        self.init(frame: CGRectMake(0, 0, 0, 0))
+        self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
-        NSBundle.mainBundle().loadNibNamed("FlashCardPlayView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("FlashCardPlayView", owner: self, topLevelObjects: nil)
         self.frame = self.flashCardPlayView.frame
         addSubview(flashCardPlayView)
         
-        self.frontCard.textColor = NSColor.blackColor()
-        self.backCard.textColor = NSColor.blackColor()
-        self.frontCard.backgroundColor = NSColor.whiteColor()
-        self.backCard.backgroundColor = NSColor.whiteColor()
+        self.frontCard.textColor = NSColor.black
+        self.backCard.textColor = NSColor.black
+        self.frontCard.backgroundColor = NSColor.white
+        self.backCard.backgroundColor = NSColor.white
         
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(FlashCardPlayView.nextCard),
-            name: "didPressNextCardKey",
+            name: NSNotification.Name(rawValue: "didPressNextCardKey"),
             object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(FlashCardPlayView.previousCard),
-            name: "didPressPreviousCardKey",
+            name: NSNotification.Name(rawValue: "didPressPreviousCardKey"),
             object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: FlashCardPlayModelDelegate
@@ -61,12 +61,12 @@ class FlashCardPlayView: NSView, FlashCardPlayModelDelegate {
     // MARK: private methods
     
     @objc
-    private func nextCard() {
+    fileprivate func nextCard() {
         self.delegate.didPressKeyNext()
     }
     
     @objc
-    private func previousCard() {
+    fileprivate func previousCard() {
         self.delegate.didPressKeyPrevious()
     }
 }

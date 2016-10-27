@@ -11,7 +11,7 @@ import RealmSwift
 import WebKit
 
 protocol RegistCardViewDelegate {
-    func didPressEnterWith(frontText: String, backText: String)
+    func didPressEnterWith(_ frontText: String, backText: String)
 }
 
 class RegistCardView: NSView, RegistCardModelDelegate {
@@ -25,21 +25,21 @@ class RegistCardView: NSView, RegistCardModelDelegate {
     @IBOutlet weak var frontTextField: NSTextField!
     @IBOutlet weak var backTextField: NSTextField!
     
-    @IBAction func didPressEnterInBackTextField(sender: AnyObject) {
+    @IBAction func didPressEnterInBackTextField(_ sender: AnyObject) {
         self.delegate.didPressEnterWith(self.frontTextField.stringValue, backText: self.backTextField.stringValue)
     }
     
     convenience init() {
-        self.init(frame: CGRectMake(0, 0, 0, 0))
+        self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
-        NSBundle.mainBundle().loadNibNamed("RegistCardView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("RegistCardView", owner: self, topLevelObjects: nil)
         self.frame = self.registCardView.frame
         addSubview(self.registCardView)
         
          // フォーカスの枠を出さない
-        self.dictionaryContentsField.focusRingType = NSFocusRingType.None
-        self.frontTextField.focusRingType = NSFocusRingType.None
-        self.backTextField.focusRingType = NSFocusRingType.None
+        self.dictionaryContentsField.focusRingType = NSFocusRingType.none
+        self.frontTextField.focusRingType = NSFocusRingType.none
+        self.backTextField.focusRingType = NSFocusRingType.none
         
         // Tab によるフォーカス移動をループさせる
         self.frontTextField.nextKeyView = self.backTextField
@@ -48,7 +48,7 @@ class RegistCardView: NSView, RegistCardModelDelegate {
     
     // MARK: private methods
     
-    private func renderInitialTexts() {
+    fileprivate func renderInitialTexts() {
         self.frontTextField.stringValue = self.model.searchedWord
         self.dictionaryContentsField.mainFrame.loadHTMLString(self.model.dictionaryContents, baseURL: nil)
     }
@@ -56,7 +56,7 @@ class RegistCardView: NSView, RegistCardModelDelegate {
     // MARK: RegistCardModelDelegate
     
     func didRegistCard() {
-        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = NSApplication.shared().delegate as! AppDelegate
         appDelegate.popover.changeViewController(SearchWordViewController(), transition: nil, callback: {})
     }
 }

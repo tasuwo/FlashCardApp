@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension SequenceType {
-    func firstElement() -> Self.Generator.Element? {
+extension Sequence {
+    func firstElement() -> Self.Iterator.Element? {
         for element in self {
             return element
         }

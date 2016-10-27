@@ -15,18 +15,18 @@ protocol FlashCardsManagerModelDelegate {
 
 class FlashCardsManagerModel : NSObject, NSTableViewDataSource {
     var delegate: FlashCardsManagerModelDelegate!
-    private(set) var holders = List<CardHolder>()
-    private(set) var cards = List<Card>()
+    fileprivate(set) var holders = List<CardHolder>()
+    fileprivate(set) var cards = List<Card>()
     
     func loadCards() {
         let realm = try! Realm()
-        let cards = realm.objects(Card)
+        let cards = realm.objects(Card.self)
         for card in cards {
             self.cards.append(card)
         }
     }
     
-    func getDataAt(row: Int, cellID: String, tableView: NSTableView) -> NSView? {
+    func getDataAt(_ row: Int, cellID: String, tableView: NSTableView) -> NSView? {
         var i = 0
         var showCard: Card!
         for card in cards {
@@ -52,7 +52,7 @@ class FlashCardsManagerModel : NSObject, NSTableViewDataSource {
             return nil
         }
 
-        if let cell = tableView.makeViewWithIdentifier(cellID, owner: nil) as? NSTableCellView {
+        if let cell = tableView.make(withIdentifier: cellID, owner: nil) as? NSTableCellView {
             cell.textField?.stringValue = showText
             return cell
         }
@@ -60,7 +60,7 @@ class FlashCardsManagerModel : NSObject, NSTableViewDataSource {
         return nil
     }
     
-    func getCardAt(row: Int) -> Card? {
+    func getCardAt(_ row: Int) -> Card? {
         var i = 0
         var selectedCard: Card?
         for card in cards {
@@ -81,7 +81,7 @@ class FlashCardsManagerModel : NSObject, NSTableViewDataSource {
     
     // MARK: NSTableViewDataSource
     
-    @objc func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    @objc func numberOfRows(in tableView: NSTableView) -> Int {
         return self.cards.count
     }
 }

@@ -12,19 +12,19 @@ class NavigationView : NSView {
     @IBOutlet var navigationView: NSView!
     @IBOutlet weak var contentView: NSView!
     @IBOutlet weak var settingButton: NSButton!
-    @IBAction func didPressSettingButton(sender: AnyObject) {
-        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+    @IBAction func didPressSettingButton(_ sender: AnyObject) {
+        let appDelegate = NSApplication.shared().delegate as! AppDelegate
         appDelegate.showSettingView()
     }
 
     convenience init() {
-        self.init(frame: CGRectMake(0, 0, 0, 0))
+        self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
        
-        NSBundle.mainBundle().loadNibNamed("NavigationView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("NavigationView", owner: self, topLevelObjects: nil)
         self.frame = self.navigationView.frame
         addSubview(self.navigationView)
 
         // フォーカスの枠をださない
-        self.settingButton.focusRingType = NSFocusRingType.None
+        self.settingButton.focusRingType = NSFocusRingType.none
     }
 }

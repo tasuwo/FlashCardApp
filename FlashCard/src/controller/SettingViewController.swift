@@ -17,7 +17,7 @@ class SettingViewController : NSViewController {
         self.mainView.addSubview(HotKeySettingView(frame: (self.window.contentView?.frame)!))
     }
 
-    @IBAction func selectedTabItem(sender: AnyObject) {
+    @IBAction func selectedTabItem(_ sender: AnyObject) {
         let item = sender as! NSToolbarItem
         let viewType = item.tag
         var newView: NSView? = nil

@@ -12,9 +12,9 @@ class BaseView : NSView {
     @IBOutlet var baseView: NSView!
 
     convenience init() {
-        self.init(frame: CGRectMake(0, 0, 0, 0))
+        self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
        
-        NSBundle.mainBundle().loadNibNamed("BaseView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("BaseView", owner: self, topLevelObjects: nil)
         self.frame = self.baseView.frame
         addSubview(self.baseView)
     }

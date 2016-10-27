@@ -9,8 +9,8 @@
 import Foundation
 
 class FlashCardsManagerViewController : NSViewController, FlashCardsManagerViewDelegate {
-    private var parentFrame: CGRect!
-    private var model : FlashCardsManagerModel!
+    fileprivate var parentFrame: CGRect!
+    fileprivate var model : FlashCardsManagerModel!
     // 開放されないようにインスタンスを保持
     var controller: NSWindowController! = nil
     
@@ -34,7 +34,7 @@ class FlashCardsManagerViewController : NSViewController, FlashCardsManagerViewD
         managerView.model = self.model
     }
     
-    func didSelectTableRow(selectedRow: Int) {
+    func didSelectTableRow(_ selectedRow: Int) {
         if let card = self.model.getCardAt(selectedRow) {
             let newVc = EditCardViewController(id: card.id, managerModel: self.model)
             let newWindow = NSWindow(contentViewController: newVc)

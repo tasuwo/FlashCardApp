@@ -14,7 +14,7 @@ import RealmSwift
 
 protocol EditCardDelegate {
     func didPressDelete()
-    func didPressUpdate(frontText: String, backtext: String)
+    func didPressUpdate(_ frontText: String, backtext: String)
 }
 
 class EditCardView: NSView, EditCardModelDelegate {
@@ -26,17 +26,17 @@ class EditCardView: NSView, EditCardModelDelegate {
     @IBOutlet var editCardView: NSView!
     @IBOutlet weak var frontTextEditField: NSCustomTextFieldCell!
     @IBOutlet weak var backTextEditField: NSCustomTextFieldCell!
-    @IBAction func didPressDelete(sender: AnyObject) {
+    @IBAction func didPressDelete(_ sender: AnyObject) {
         self.editCardDelegate.didPressDelete()
     }
-    @IBAction func didPressUpdate(sender: AnyObject) {
+    @IBAction func didPressUpdate(_ sender: AnyObject) {
         self.editCardDelegate.didPressUpdate(self.frontTextEditField.stringValue, backtext: self.backTextEditField.stringValue)
     }
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
-        NSBundle.mainBundle().loadNibNamed("EditCardView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("EditCardView", owner: self, topLevelObjects: nil)
         self.frame = self.editCardView.frame
         addSubview(self.editCardView)
     }

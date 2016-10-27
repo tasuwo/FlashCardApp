@@ -15,8 +15,8 @@ protocol RegistCardModelDelegate {
 
 class RegistCardModel {
     var delegate: RegistCardModelDelegate!    
-    private(set) var searchedWord: String
-    private(set) var dictionaryContents: String
+    fileprivate(set) var searchedWord: String
+    fileprivate(set) var dictionaryContents: String
     
     init(word: String) {
         self.searchedWord = word
@@ -42,7 +42,7 @@ class RegistCardModel {
         // TODO : カードホルダーの選択
         holder.id = 0
         let lastCards: List<Card> = CardHolder.lastCards(0, realm: realm)
-        holder.cards.appendContentsOf(lastCards)
+        holder.cards.append(objectsIn: lastCards)
         holder.cards.append(card)
 
         try! realm.write {

@@ -11,7 +11,7 @@ import WebKit
 import RealmSwift
 
 class SearchWordViewController: NSViewController, SearchWordViewDelegate {
-    private var model : SearchWordModel!
+    fileprivate var model : SearchWordModel!
     
     override func loadView() {
         self.view = SearchWordView()
@@ -29,13 +29,13 @@ class SearchWordViewController: NSViewController, SearchWordViewDelegate {
     }
     
     override func viewDidAppear() {
-        let parentView = self.parentViewController?.parentViewController as? NavigationViewController
+        let parentView = self.parent?.parent as? NavigationViewController
         parentView?.updateFirstResponder(self)
     }
 
     // MARK: SearchWordViewDelegate
     
-    func didCangeText(text: String) {
+    func didCangeText(_ text: String) {
         self.model.lookup(text)
     }
 }

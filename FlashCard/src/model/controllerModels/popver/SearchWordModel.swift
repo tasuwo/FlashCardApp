@@ -15,11 +15,11 @@ protocol SearchWordModelDelegate {
 class SearchWordModel {
     var delegate: SearchWordModelDelegate!
     
-    private(set) var lookupResult: String = "" {
+    fileprivate(set) var lookupResult: String = "" {
         didSet { self.delegate.renderLookUpResult() }
     }
     
-    func lookup(word: String) {
+    func lookup(_ word: String) {
         // TODO : 辞書設定
         let wisdomPath = "/Library/Dictionaries/Sanseido The WISDOM English-Japanese Japanese-English Dictionary.dictionary"
         

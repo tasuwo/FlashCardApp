@@ -9,8 +9,8 @@
 import Foundation
 
 extension String {
-    func componentsSeparatedByAfterString(string: String) -> [String] {
-        var parts = self.componentsSeparatedByString(string)
+    func componentsSeparatedByAfterString(_ string: String) -> [String] {
+        var parts = self.components(separatedBy: string)
         if parts.count == 1 { return [self] }
         
         for i in 0...parts.count-2 {
@@ -19,8 +19,8 @@ extension String {
         return parts
     }
     
-    func componentsSeparatedByBeforeString(string: String) -> [String] {
-        var parts = self.componentsSeparatedByString(string)
+    func componentsSeparatedByBeforeString(_ string: String) -> [String] {
+        var parts = self.components(separatedBy: string)
         if parts.count == 1 { return [self] }
         
         for i in 1...parts.count-1 {
@@ -29,7 +29,7 @@ extension String {
         return parts       
     }
     
-    func componentsSeparatedByAfterStringAt(string: String, num: Int) -> [String] {
+    func componentsSeparatedByAfterStringAt(_ string: String, num: Int) -> [String] {
         var parts = self.componentsSeparatedByAfterString(string)
         if parts.count == 1 { return [self] }
         
@@ -38,13 +38,13 @@ extension String {
         
         let pre = parts[0...num-1]
         let bak = parts[num...parts.count-1]
-        let p = pre.joinWithSeparator("")
-        let b = bak.joinWithSeparator("")
+        let p = pre.joined(separator: "")
+        let b = bak.joined(separator: "")
         
         return [p, b]
     }
     
-    func componentsSeparatedByBeforeStringAt(string: String, num: Int) -> [String] {
+    func componentsSeparatedByBeforeStringAt(_ string: String, num: Int) -> [String] {
         var parts = self.componentsSeparatedByBeforeString(string)
         if parts.count == 1 { return [self] }
         
@@ -52,8 +52,8 @@ extension String {
         
         let pre = parts[0...num-1]
         let bak = parts[num...parts.count-1]
-        let p = pre.joinWithSeparator("")
-        let b = bak.joinWithSeparator("")
+        let p = pre.joined(separator: "")
+        let b = bak.joined(separator: "")
         
         return [p, b]       
     }

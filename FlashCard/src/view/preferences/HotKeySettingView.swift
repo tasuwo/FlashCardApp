@@ -27,7 +27,7 @@ class HotKeySettingView: NSView {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
 
-        NSBundle.mainBundle().loadNibNamed("HotKeySettingView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("HotKeySettingView", owner: self, topLevelObjects: nil)
         self.hotKeySettingView.frame = frameRect
 
         self.hotKeySettingView.addSubview(self.launchApplicationKey)

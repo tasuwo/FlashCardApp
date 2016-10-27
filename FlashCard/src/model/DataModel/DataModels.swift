@@ -20,8 +20,8 @@ class Card: Object {
         return "id"
     }
 
-    static func lastId(realm: Realm) -> Int {
-        if let user = realm.objects(Card).sorted("id").last {
+    static func lastId(_ realm: Realm) -> Int {
+        if let user = realm.objects(Card.self).sorted(byProperty: "id").last {
             return user.id + 1
         } else {
             return 1
@@ -38,16 +38,16 @@ class CardHolder: Object {
         return "id"
     }
 
-    static func lastId(realm: Realm) -> Int {
-        if let holder = realm.objects(CardHolder).last {
+    static func lastId(_ realm: Realm) -> Int {
+        if let holder = realm.objects(CardHolder.self).last {
             return holder.id + 1
         } else {
             return 1
         }
     }
 
-    static func lastCards(id: Int, realm: Realm) -> List<Card> {
-        if let holder = realm.objects(CardHolder).filter("id == \(id)").first {
+    static func lastCards(_ id: Int, realm: Realm) -> List<Card> {
+        if let holder = realm.objects(CardHolder.self).filter("id == \(id)").first {
             return holder.cards
         } else {
             return List<Card>()

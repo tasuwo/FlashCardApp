@@ -10,7 +10,7 @@ import Foundation
 import WebKit
 
 protocol SearchWordViewDelegate {
-    func didCangeText(text: String)
+    func didCangeText(_ text: String)
 }
 
 class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
@@ -21,28 +21,28 @@ class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
     @IBOutlet weak var inputWordField: NSTextField!
     @IBOutlet var dictionaryContentsField: WebView!
 
-    @IBAction func didPressEnterButtonInInputTextField (sender: AnyObject) {
-        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+    @IBAction func didPressEnterButtonInInputTextField (_ sender: AnyObject) {
+        let appDelegate = NSApplication.shared().delegate as! AppDelegate
         let vc = RegistCardViewController(searchedWord: self.inputWordField.stringValue)
         appDelegate.popover.changeViewController(vc, transition: nil, callback: {})
     }
     
     convenience init() {
-        self.init(frame: CGRectMake(0, 0, 0, 0))
+        self.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
        
-        NSBundle.mainBundle().loadNibNamed("SearchWordView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("SearchWordView", owner: self, topLevelObjects: nil)
         self.frame = self.searchWordView.frame
         addSubview(self.searchWordView)
         
         inputWordField.delegate = self
 
-        self.inputWordField.focusRingType = NSFocusRingType.None
-        self.dictionaryContentsField.focusRingType = NSFocusRingType.None
+        self.inputWordField.focusRingType = NSFocusRingType.none
+        self.dictionaryContentsField.focusRingType = NSFocusRingType.none
     }
     
     // MARK: NSTextFieldDelegate
 
-    override func controlTextDidChange(obj: NSNotification) {
+    override func controlTextDidChange(_ obj: Notification) {
         self.delegate.didCangeText(self.inputWordField.stringValue)
     }
     

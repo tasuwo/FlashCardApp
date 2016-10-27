@@ -9,10 +9,10 @@
 import Foundation
 
 class NSStatusBarPopover: NSPopover {
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
+    let statusItem = NSStatusBar.system().statusItem(withLength: -2)
     var containerViewController: NSViewController!
-    private(set) var fromVC: NSViewController!
-    private(set) var animating = false
+    fileprivate(set) var fromVC: NSViewController!
+    fileprivate(set) var animating = false
 
     override init() {
         if let button = statusItem.button {
@@ -22,8 +22,8 @@ class NSStatusBarPopover: NSPopover {
 
             // TODO: アクティブでない場合，キーバインドが効かない
             menu.addItem(NSMenuItem(title: "Preferences", action: #selector(AppDelegate.showSettingView), keyEquivalent: ","))
-            menu.addItem(NSMenuItem.separatorItem())
-            menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+            menu.addItem(NSMenuItem.separator())
+            // menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSInputServiceProvider.terminate(_:)), keyEquivalent: "q"))
  
             statusItem.menu = menu
         }
@@ -48,31 +48,31 @@ class NSStatusBarPopover: NSPopover {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func showPopover(sender: AnyObject?) {
+    func showPopover(_ sender: AnyObject?) {
         if let button = statusItem.button {
-            self.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+            self.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
         }
     }
 
-    func closePopover(sender: AnyObject?) {
+    func closePopover(_ sender: AnyObject?) {
         self.performClose(sender)
     }
 
-    func togglePopover(sender: AnyObject?) {
-        if self.shown {
+    func togglePopover(_ sender: AnyObject?) {
+        if self.isShown {
             closePopover(sender)
         } else {
             showPopover(sender)
         }
     }
 
-    func changeViewController(toVC: NSViewController, transition option: NSViewControllerTransitionOptions?, callback: () -> Void) {
+    func changeViewController(_ toVC: NSViewController, transition option: NSViewControllerTransitionOptions?, callback: @escaping () -> Void) {
         animating = true
         self.containerViewController.addChildViewController(toVC)
         let transition = option == nil ? getTransitionOptionTo(toVC) : option
-        self.containerViewController.transitionFromViewController(
-            self.fromVC,
-            toViewController: toVC,
+        self.containerViewController.transition(
+            from: self.fromVC,
+            to: toVC,
             options: transition!,
             completionHandler: {
                 finished in
@@ -85,16 +85,16 @@ class NSStatusBarPopover: NSPopover {
         )
     }
 
-    private func getTransitionOptionTo(toVC: NSViewController) -> NSViewControllerTransitionOptions {
+    fileprivate func getTransitionOptionTo(_ toVC: NSViewController) -> NSViewControllerTransitionOptions {
         switch toVC {
         case _ as FlashCardPlayViewController:
-            return .SlideLeft
+            return .slideLeft
         case _ as SearchWordViewController:
-            return .SlideRight
+            return .slideRight
         case _ as RegistCardViewController:
-            return .SlideLeft
+            return .slideLeft
         default:
-            return .None
+            return NSViewControllerTransitionOptions()
         }
     }
 }

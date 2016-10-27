@@ -11,14 +11,14 @@ import Cocoa
 import RealmSwift
 
 protocol FlashCardsManagerViewDelegate {
-    func didSelectTableRow(selectedRow: Int)
+    func didSelectTableRow(_ selectedRow: Int)
 }
 
 class FlashCardsManagerView: NSView, NSTableViewDelegate, FlashCardsManagerModelDelegate {
     var model: FlashCardsManagerModel! {
         didSet {
             self.model.loadCards()
-            self.flashCardsTableView.setDataSource(self.model)
+            self.flashCardsTableView.dataSource = self.model
             self.flashCardsTableView.reloadData()
         }
     }
@@ -30,11 +30,11 @@ class FlashCardsManagerView: NSView, NSTableViewDelegate, FlashCardsManagerModel
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
 
-        NSBundle.mainBundle().loadNibNamed("FlashCardsManagerView", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("FlashCardsManagerView", owner: self, topLevelObjects: nil)
         self.flashCardsManagerView.frame = frameRect
         addSubview(flashCardsManagerView)
 
-        self.flashCardsTableView.setDelegate(self)
+        self.flashCardsTableView.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -43,11 +43,11 @@ class FlashCardsManagerView: NSView, NSTableViewDelegate, FlashCardsManagerModel
    
     // MARK: NSTableViewDelegate
 
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         return self.model.getDataAt(row, cellID: (tableColumn?.identifier)!, tableView: tableView)
     }
     
-    func tableViewSelectionDidChange(notification: NSNotification) {
+    func tableViewSelectionDidChange(_ notification: Notification) {
         self.delegate.didSelectTableRow(self.flashCardsTableView.selectedRow)
     }
     
