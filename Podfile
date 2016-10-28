@@ -2,6 +2,6 @@
 # platform :ios, '6.0'
 
 target 'FlashCard' do
-    pod 'MASShortcut', '~> 2.3.3'
+    pod 'MASShortcut', '~> 2.3.5'
 end
 
