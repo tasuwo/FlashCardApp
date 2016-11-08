@@ -76,9 +76,12 @@ class PanelController: NSWindowController, NSWindowDelegate {
     }
 
      func changeViewController(_ toVC: NSViewController, transition option: NSViewControllerTransitionOptions?, callback: @escaping () -> Void) {
-        // TODO: animating をどうするか
+        self.animating = true
         let vc = self.window?.contentViewController as! NavigationViewController
-        vc.changeViewController(toVC, transition: option, callback: callback)
+        vc.changeViewController(toVC, transition: option, callback: {
+            self.animating = false
+            callback()
+        })
     }
 
     func getShownViewController() -> NSViewController {
