@@ -9,7 +9,7 @@
 import Foundation
 
 class NavigationView : NSView {
-    @IBOutlet var navigationView: NSView!
+    @IBOutlet var navigationView: PanelBackground!
     @IBOutlet weak var contentView: NSView!
     @IBOutlet weak var settingButton: NSButton!
     @IBAction func didPressSettingButton(_ sender: AnyObject) {

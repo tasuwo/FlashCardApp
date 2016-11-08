@@ -17,7 +17,6 @@
 		2C14889A1D3F6B0E007A8BBD /* FlashCardPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */; };
 		2C14889C1D3F6CFB007A8BBD /* FlashCardPlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */; };
 		2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C16875F1D2B96D9000B12B1 /* DataModels.swift */; };
-		2C1687631D2B9DC9000B12B1 /* PopverOnStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */; };
 		2C1687661D2BAFB0000B12B1 /* RegistCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */; };
 		2C1687671D2BAFB0000B12B1 /* RegistCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */; };
 		2C1687951D2BF47B000B12B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1687931D2BF47B000B12B1 /* MainMenu.xib */; };
@@ -41,6 +40,10 @@
 		2C60E3111D2DD14D0070C112 /* MutableCollectionType+shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60E3101D2DD14D0070C112 /* MutableCollectionType+shuffle.swift */; };
 		2C60E3131D2DD1A10070C112 /* CollectionType+shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60E3121D2DD1A10070C112 /* CollectionType+shuffle.swift */; };
 		2C9CFF2E1D2F7FF000F40888 /* EditCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9CFF2D1D2F7FF000F40888 /* EditCardView.xib */; };
+		2CA709C61DD1567B009334CB /* PanelBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA709C51DD1567B009334CB /* PanelBackground.swift */; };
+		2CA709CC1DD15874009334CB /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA709CB1DD15874009334CB /* StatusBarItem.swift */; };
+		2CA709CE1DD15978009334CB /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA709CD1DD15978009334CB /* StatusBarController.swift */; };
+		2CA709D21DD15C5A009334CB /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA709D11DD15C5A009334CB /* PanelController.swift */; };
 		2CE6D8271D4055AE00A3BAD6 /* SearchWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */; };
 		2CE6D82B1D405A9A00A3BAD6 /* SearchWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */; };
 		2CE6D82D1D40634100A3BAD6 /* RegistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */; };
@@ -66,7 +69,6 @@
 		2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardPlayView.swift; sourceTree = "<group>"; };
 		2C14889B1D3F6CFB007A8BBD /* FlashCardPlayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardPlayModel.swift; sourceTree = "<group>"; };
 		2C16875F1D2B96D9000B12B1 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
-		2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopverOnStatusBar.swift; sourceTree = "<group>"; };
 		2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCardViewController.swift; sourceTree = "<group>"; };
 		2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistCardView.xib; sourceTree = "<group>"; };
 		2C1687941D2BF47B000B12B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -92,6 +94,10 @@
 		2C60E3101D2DD14D0070C112 /* MutableCollectionType+shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutableCollectionType+shuffle.swift"; sourceTree = "<group>"; };
 		2C60E3121D2DD1A10070C112 /* CollectionType+shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+shuffle.swift"; sourceTree = "<group>"; };
 		2C9CFF2D1D2F7FF000F40888 /* EditCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCardView.xib; sourceTree = "<group>"; };
+		2CA709C51DD1567B009334CB /* PanelBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackground.swift; sourceTree = "<group>"; };
+		2CA709CB1DD15874009334CB /* StatusBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
+		2CA709CD1DD15978009334CB /* StatusBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		2CA709D11DD15C5A009334CB /* PanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelController.swift; sourceTree = "<group>"; };
 		2CD301671D2D581E0018FA62 /* MASShortcut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASShortcut-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordView.swift; sourceTree = "<group>"; };
 		2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordModel.swift; sourceTree = "<group>"; };
@@ -129,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE6D8381D40968800A3BAD6 /* preferences */,
-				2C16876C1D2BDFD2000B12B1 /* popver */,
+				2C16876C1D2BDFD2000B12B1 /* panel */,
 				2C2864EC1D3BA81E0084E405 /* SettingViewController.swift */,
 			);
 			path = controller;
@@ -140,7 +146,7 @@
 			children = (
 				2C1687931D2BF47B000B12B1 /* MainMenu.xib */,
 				2C16876F1D2BE00A000B12B1 /* preferences */,
-				2C16876E1D2BDFFD000B12B1 /* popver */,
+				2C16876E1D2BDFFD000B12B1 /* panel */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -169,37 +175,32 @@
 			children = (
 				2C60C44B1D278EB4009C1CD3 /* NSCustomTextFieldCell.swift */,
 				2C0201631D2A35D0006B307A /* DictionaryManager.swift */,
-				2C1687621D2B9DC9000B12B1 /* PopverOnStatusBar.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
 		};
-		2C16876C1D2BDFD2000B12B1 /* popver */ = {
+		2C16876C1D2BDFD2000B12B1 /* panel */ = {
 			isa = PBXGroup;
 			children = (
-				2C58DB211D7DE5040060E75E /* BaseViewController.swift */,
+				2CA709CF1DD15A00009334CB /* childView */,
 				2C58DB271D7E03DD0060E75E /* NavigationViewController.swift */,
-				2C60C44D1D27CA19009C1CD3 /* SearchWordViewController.swift */,
-				2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */,
-				2C0667131D2D0CCE007F58FC /* FlashCardPlayViewController.swift */,
+				2CA709D11DD15C5A009334CB /* PanelController.swift */,
+				2CA709CD1DD15978009334CB /* StatusBarController.swift */,
 			);
+			name = panel;
 			path = popver;
 			sourceTree = "<group>";
 		};
-		2C16876E1D2BDFFD000B12B1 /* popver */ = {
+		2C16876E1D2BDFFD000B12B1 /* panel */ = {
 			isa = PBXGroup;
 			children = (
-				2C0667141D2D0CCE007F58FC /* FlashCardPlayView.xib */,
-				2C60C44E1D27CA19009C1CD3 /* SearchWordView.xib */,
-				2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */,
-				2C58DB231D7E02A60060E75E /* BaseView.xib */,
+				2CA709D01DD15B9A009334CB /* childView */,
 				2C58DB1F1D7DE13F0060E75E /* NavigationView.xib */,
-				2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */,
-				2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */,
-				2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */,
-				2C58DB1D1D7DE1280060E75E /* BaseView.swift */,
 				2C58DB251D7E03070060E75E /* NavigationView.swift */,
+				2CA709C51DD1567B009334CB /* PanelBackground.swift */,
+				2CA709CB1DD15874009334CB /* StatusBarItem.swift */,
 			);
+			name = panel;
 			path = popver;
 			sourceTree = "<group>";
 		};
@@ -262,6 +263,32 @@
 				2C60C4361D275AC5009C1CD3 /* AppDelegate.swift */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		2CA709CF1DD15A00009334CB /* childView */ = {
+			isa = PBXGroup;
+			children = (
+				2C58DB211D7DE5040060E75E /* BaseViewController.swift */,
+				2C1687641D2BAFB0000B12B1 /* RegistCardViewController.swift */,
+				2C60C44D1D27CA19009C1CD3 /* SearchWordViewController.swift */,
+				2C0667131D2D0CCE007F58FC /* FlashCardPlayViewController.swift */,
+			);
+			name = childView;
+			sourceTree = "<group>";
+		};
+		2CA709D01DD15B9A009334CB /* childView */ = {
+			isa = PBXGroup;
+			children = (
+				2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */,
+				2C58DB1D1D7DE1280060E75E /* BaseView.swift */,
+				2C60C44E1D27CA19009C1CD3 /* SearchWordView.xib */,
+				2C1687651D2BAFB0000B12B1 /* RegistCardView.xib */,
+				2C58DB231D7E02A60060E75E /* BaseView.xib */,
+				2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */,
+				2C0667141D2D0CCE007F58FC /* FlashCardPlayView.xib */,
+				2C1488991D3F6B0E007A8BBD /* FlashCardPlayView.swift */,
+			);
+			name = childView;
 			sourceTree = "<group>";
 		};
 		2CADE6451D3CFDE100F99D83 /* extension */ = {
@@ -474,7 +501,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EABE432EE6F821B372A19ADB /* [CP] Copy Pods Resources */ = {
@@ -502,22 +529,25 @@
 				2C58DB1E1D7DE1280060E75E /* BaseView.swift in Sources */,
 				2C5AB8B11D48E0E900339122 /* String+removeInt.swift in Sources */,
 				2CE6D8331D40867700A3BAD6 /* FlashCardsManagerModel.swift in Sources */,
+				2CA709C61DD1567B009334CB /* PanelBackground.swift in Sources */,
 				2C1687661D2BAFB0000B12B1 /* RegistCardViewController.swift in Sources */,
 				2CF3B74F1D444FB400BBDF5E /* EditCardView.swift in Sources */,
 				2C58DB221D7DE5040060E75E /* BaseViewController.swift in Sources */,
 				2C60C4371D275AC5009C1CD3 /* AppDelegate.swift in Sources */,
+				2CA709CE1DD15978009334CB /* StatusBarController.swift in Sources */,
 				2C60C44F1D27CA19009C1CD3 /* SearchWordViewController.swift in Sources */,
 				2C58DB281D7E03DD0060E75E /* NavigationViewController.swift in Sources */,
 				2CE6D8351D40935C00A3BAD6 /* EditCardModel.swift in Sources */,
+				2CA709D21DD15C5A009334CB /* PanelController.swift in Sources */,
 				2C2864ED1D3BA81E0084E405 /* SettingViewController.swift in Sources */,
 				2C60C44C1D278EB4009C1CD3 /* NSCustomTextFieldCell.swift in Sources */,
 				2C0201711D2A6E07006B307A /* SequenceType+firstElement.swift in Sources */,
-				2C1687631D2B9DC9000B12B1 /* PopverOnStatusBar.swift in Sources */,
 				2C02015C1D296DB6006B307A /* HotKeySettingView.swift in Sources */,
 				2CEEF8F11D4757C700A12925 /* HotKeySettingViewController.swift in Sources */,
 				2C5AB8AF1D48E08E00339122 /* String+componentsSeparated.swift in Sources */,
 				2C0201641D2A35D0006B307A /* DictionaryManager.swift in Sources */,
 				2CE6D82F1D40654400A3BAD6 /* RegistCardModel.swift in Sources */,
+				2CA709CC1DD15874009334CB /* StatusBarItem.swift in Sources */,
 				2C58DB261D7E03070060E75E /* NavigationView.swift in Sources */,
 				2C1687601D2B96D9000B12B1 /* DataModels.swift in Sources */,
 				2CE6D8371D40944500A3BAD6 /* FlashCardsManagerViewController.swift in Sources */,

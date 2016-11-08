@@ -10,12 +10,12 @@ import Cocoa
 import RealmSwift
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, PanelControllerDelegate {
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var mainView: NSView!
-
-    var popover: NSStatusBarPopover = NSStatusBarPopover()
+    var statusbarController: StatusBarController!
+    var panelController: PanelController!
 
     @IBAction func selectedTabItem(_ sender: AnyObject) {
         let item = sender as! NSToolbarItem
@@ -37,12 +37,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.mainView.addSubview(HotKeySettingView(frame: (self.window.contentView?.frame)!))
         self.window.contentView = self.mainView
+        self.statusbarController = StatusBarController()
+        self.panelController = PanelController(delegate: self)
 
         initHotKeyActions()
 
         let realm = try! Realm()
         let defaultHolder = realm.objects(CardHolder.self).filter("id == 0")
-
         if defaultHolder.count == 0 {
             let cardHolder = CardHolder()
             cardHolder.id = 0
@@ -53,18 +54,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    func statusItemViewRectForPanelController() -> NSRect {
+        return self.statusbarController.view.getRect()
+    }
+
     // MARK: control popover methods
 
     func togglePopover() {
-        self.popover.togglePopover(nil)
+        if self.panelController.window!.isVisible {
+            self.panelController.closePanel()
+        } else {
+            self.panelController.openPanel()
+        }
+    }
+
+    func applicationDidResignActive(_ notification: Notification) {
+        self.panelController.closePanel()
     }
     
     func showSettingView() {
         // 設定画面の表示
         self.window.setIsVisible(true)
         // popver をしまう
-        if self.popover.isShown {
-            self.togglePopover()
+        if self.panelController.window!.isVisible {
+            self.panelController.closePanel()
         }
         // 設定画面を最前面にする
         self.window.becomeFirstResponder()
@@ -74,14 +87,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     fileprivate func switchPopover(_ nextViewController: NSViewController.Type) {
         var shouldChangeView = false
-        let isPopoverShown = self.popover.isShown
-        if self.popover.fromVC.isKind(of: nextViewController as AnyClass) == false {
+        let isPopoverShown = self.panelController.window!.isVisible
+        if self.panelController.getShownViewController().isKind(of: nextViewController as AnyClass) == false {
             shouldChangeView = true
         }
         var option: NSViewControllerTransitionOptions? = nil
         var toggle = {
             let appDelegate = NSApplication.shared().delegate as! AppDelegate
-            appDelegate.popover.togglePopover(nil)
+            // WARNING: ちょくせつトグルすべき？
+            appDelegate.togglePopover()
         }
 
         // view の切替時にはトグルしない
@@ -94,13 +108,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         if shouldChangeView {
-            self.popover.changeViewController(nextViewController.init(), transition: option, callback: toggle)
+            self.panelController.changeViewController(nextViewController.init(), transition: option, callback: toggle)
         } else {
             toggle()
         }
 
         // popver をアクティブにする
-        if self.popover.isShown {
+        if self.panelController.window!.isVisible {
             NSApplication.shared().activate(ignoringOtherApps: true)
         }
     }
@@ -109,7 +123,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         MASShortcutBinder.shared().bindShortcut(
             withDefaultsKey: kPreferenceShortcut.launch.rawValue,
             toAction: {
-                if (!self.popover.animating) {
+                if (!self.panelController.animating) {
                     self.switchPopover(SearchWordViewController.self)
                 }
             }
@@ -117,7 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         MASShortcutBinder.shared().bindShortcut(
             withDefaultsKey: kPreferenceShortcut.flushCard.rawValue,
             toAction: {
-                if (!self.popover.animating) {
+                if (!self.panelController.animating) {
                     self.switchPopover(FlashCardPlayViewController.self)
                 }
             }

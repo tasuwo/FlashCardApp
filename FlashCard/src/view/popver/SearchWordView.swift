@@ -24,7 +24,7 @@ class SearchWordView : NSView, NSTextFieldDelegate, SearchWordModelDelegate {
     @IBAction func didPressEnterButtonInInputTextField (_ sender: AnyObject) {
         let appDelegate = NSApplication.shared().delegate as! AppDelegate
         let vc = RegistCardViewController(searchedWord: self.inputWordField.stringValue)
-        appDelegate.popover.changeViewController(vc, transition: nil, callback: {})
+        appDelegate.panelController.changeViewController(vc, transition: nil, callback: {})
     }
     
     convenience init() {

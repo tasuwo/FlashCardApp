@@ -57,6 +57,6 @@ class RegistCardView: NSView, RegistCardModelDelegate {
     
     func didRegistCard() {
         let appDelegate = NSApplication.shared().delegate as! AppDelegate
-        appDelegate.popover.changeViewController(SearchWordViewController(), transition: nil, callback: {})
+        appDelegate.panelController.changeViewController(SearchWordViewController(), transition: nil, callback: {})
     }
 }
