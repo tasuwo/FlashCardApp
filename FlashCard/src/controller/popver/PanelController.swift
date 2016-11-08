@@ -24,9 +24,11 @@ class PanelController: NSWindowController, NSWindowDelegate {
     var navigationView: NavigationView?
 
     convenience init(delegate: PanelControllerDelegate?) {
-        let panel = NSWindow(contentViewController: NavigationViewController())
+        let panel = PanelWindow()
         self.init(window: panel)
 
+        // TODO: 本当はこれらを PanelWindow の init に記述したいがうまくいかなかった
+        panel.contentViewController = NavigationViewController()
         panel.hasShadow = false
         panel.styleMask = [.borderless]
         panel.acceptsMouseMovedEvents = true
@@ -34,7 +36,6 @@ class PanelController: NSWindowController, NSWindowDelegate {
         panel.backgroundColor = .clear
 
         animating = false
-
         self.delegate = delegate
         self.navigationView = panel.contentView as? NavigationView
     }

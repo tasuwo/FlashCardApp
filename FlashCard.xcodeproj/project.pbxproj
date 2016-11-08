@@ -44,6 +44,7 @@
 		2CA709CC1DD15874009334CB /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA709CB1DD15874009334CB /* StatusBarItem.swift */; };
 		2CA709CE1DD15978009334CB /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA709CD1DD15978009334CB /* StatusBarController.swift */; };
 		2CA709D21DD15C5A009334CB /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA709D11DD15C5A009334CB /* PanelController.swift */; };
+		2CBCF3F71DD1EFFF0020AB97 /* PanelWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCF3F61DD1EFFF0020AB97 /* PanelWindow.swift */; };
 		2CE6D8271D4055AE00A3BAD6 /* SearchWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */; };
 		2CE6D82B1D405A9A00A3BAD6 /* SearchWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */; };
 		2CE6D82D1D40634100A3BAD6 /* RegistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6D82C1D40634100A3BAD6 /* RegistCardView.swift */; };
@@ -98,6 +99,7 @@
 		2CA709CB1DD15874009334CB /* StatusBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
 		2CA709CD1DD15978009334CB /* StatusBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		2CA709D11DD15C5A009334CB /* PanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelController.swift; sourceTree = "<group>"; };
+		2CBCF3F61DD1EFFF0020AB97 /* PanelWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelWindow.swift; sourceTree = "<group>"; };
 		2CD301671D2D581E0018FA62 /* MASShortcut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASShortcut-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CE6D8261D4055AE00A3BAD6 /* SearchWordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordView.swift; sourceTree = "<group>"; };
 		2CE6D82A1D405A9A00A3BAD6 /* SearchWordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordModel.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				2C58DB251D7E03070060E75E /* NavigationView.swift */,
 				2CA709C51DD1567B009334CB /* PanelBackground.swift */,
 				2CA709CB1DD15874009334CB /* StatusBarItem.swift */,
+				2CBCF3F61DD1EFFF0020AB97 /* PanelWindow.swift */,
 			);
 			name = panel;
 			path = popver;
@@ -526,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBCF3F71DD1EFFF0020AB97 /* PanelWindow.swift in Sources */,
 				2C58DB1E1D7DE1280060E75E /* BaseView.swift in Sources */,
 				2C5AB8B11D48E0E900339122 /* String+removeInt.swift in Sources */,
 				2CE6D8331D40867700A3BAD6 /* FlashCardsManagerModel.swift in Sources */,

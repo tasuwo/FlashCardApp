@@ -20,9 +20,9 @@ class NavigationViewController: NSViewController {
         self.containerViewController.addChildViewController(self.fromVC)
         self.containerViewController.view.addSubview(self.fromVC.view)
         self.containerViewController.view.frame = self.fromVC.view.bounds
-        self.addChildViewController(self.containerViewController)
 
         let navigateView = NavigationView()
+        self.addChildViewController(self.containerViewController)
         navigateView.contentView.addSubview(self.containerViewController.view)
         self.view = navigateView
     }
