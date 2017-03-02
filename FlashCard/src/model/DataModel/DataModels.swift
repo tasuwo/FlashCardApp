@@ -21,7 +21,7 @@ class Card: Object {
     }
 
     static func lastId(_ realm: Realm) -> Int {
-        if let user = realm.objects(Card.self).sorted(byProperty: "id").last {
+        if let user = realm.objects(Card.self).sorted(byKeyPath: "id").last {
             return user.id + 1
         } else {
             return 1
